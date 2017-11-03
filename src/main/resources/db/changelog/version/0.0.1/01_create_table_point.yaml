@@ -1,0 +1,31 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ltiehi
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: id
+            type: CHAR(36)     
+        - column:
+            constraints:
+              nullable: false
+            name: X
+            type: DOUBLE         
+        - column:
+            constraints:
+              nullable: false
+            name: Y
+            type: DOUBLE
+        tableName: POINT
+- changeSet:
+    id: 2
+    author: ltiehi
+    changes:
+    - addPrimaryKey:
+        columnNames: ID
+        constraintName: POINT_PK
+        tableName: POINT
