@@ -14,13 +14,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Application {
  
-    static final Logger logger = LogManager.getLogger(Application.class.getName());
+    public static final Logger LOGGER = LogManager.getLogger(Application.class.getName());
     
     /**
      * Main class
      */
     public static void main(String[] args) {
-        logger.info("entered application");
+        LOGGER.info("entered application");
         
         SpringApplication.run(Application.class, args);
     }

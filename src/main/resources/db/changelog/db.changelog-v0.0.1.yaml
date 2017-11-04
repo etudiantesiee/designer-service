@@ -4,3 +4,11 @@ databaseChangeLog:
 #      path: db/changelog/version/0.0.1/
   - include:
       file: db/changelog/version/0.0.1/01_create_table_point.yaml
+  - include:
+      file: db/changelog/version/0.0.1/02_create_table_ellipse.yaml
+  - include:
+      file: db/changelog/version/0.0.1/03_create_table_couleur.yaml
+  - include:
+      file: db/changelog/version/0.0.1/04_create_table_chemin_de_points.yaml
+  - include:
+      file: db/changelog/version/0.0.1/05_create_table_chemin_de_points_points_mapping.yaml

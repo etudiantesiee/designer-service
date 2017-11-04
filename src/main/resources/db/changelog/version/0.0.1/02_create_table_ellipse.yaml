@@ -1,0 +1,48 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ltiehi
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: id
+            type: char(36)     
+        - column:
+            constraints:
+              nullable: false
+            name: centre
+            type: char(36) 
+        - column:
+            constraints:
+              nullable: false
+            name: l
+            type: double         
+        - column:
+            constraints:
+              nullable: false
+            name: h
+            type: double
+        tableName: ellipse
+- changeSet:
+    id: 2
+    author: ltiehi
+    changes:
+    - addPrimaryKey:
+        columnNames: id
+        constraintName: ellipse_pk
+        tableName: ellipse
+- changeSet:
+    id: 3
+    author: ltiehi
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: centre
+        baseTableName: ellipse
+        constraintName: FK_ellipse_point
+        onDelete: restrict
+        onUpdate: cascade
+        referencedColumnNames: id
+        referencedTableName: point

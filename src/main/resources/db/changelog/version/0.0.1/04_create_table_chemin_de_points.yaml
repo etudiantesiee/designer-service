@@ -1,0 +1,53 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ltiehi
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: id
+            type: char(36)     
+        - column:
+            constraints:
+              nullable: true
+            name: couleur
+            type: char(36) 
+        - column:
+            constraints:
+              nullable: true
+            name: couleur_traits_laison
+            type: boolean         
+        - column:
+            constraints:
+              nullable: false
+            name: trait_de_laison_fin
+            type: boolean 
+        - column:
+            constraints:
+              nullable: false
+            name: relier_les_points_extremes
+            type: boolean
+        tableName: chemin_de_points
+- changeSet:
+    id: 2
+    author: ltiehi
+    changes:
+    - addPrimaryKey:
+        columnNames: id
+        constraintName: chemin_de_points_pk
+        tableName: chemin_de_points
+- changeSet:
+    id: 3
+    author: ltiehi
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: couleur
+        baseTableName: chemin_de_points
+        constraintName: fk_chemin_de_points_couleur
+        onDelete: restrict
+        onUpdate: cascade
+        referencedColumnNames: id
+        referencedTableName: couleur

@@ -13,19 +13,29 @@ databaseChangeLog:
         - column:
             constraints:
               nullable: false
-            name: X
+            name: r
             type: double         
         - column:
             constraints:
               nullable: false
-            name: Y
+            name: g
+            type: double     
+        - column:
+            constraints:
+              nullable: false
+            name: b
+            type: double         
+        - column:
+            constraints:
+              nullable: false
+            name: a
             type: double
-        tableName: point
+        tableName: couleur
 - changeSet:
     id: 2
     author: ltiehi
     changes:
     - addPrimaryKey:
         columnNames: id
-        constraintName: point_pk
-        tableName: point
+        constraintName: couleur_pk
+        tableName: couleur

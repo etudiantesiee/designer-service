@@ -1,0 +1,50 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ltiehi
+    changes:
+    - createTable:
+        columns:    
+        - column:
+            constraints:
+              nullable: false
+            name: chemin_de_point_id
+            type: char(36)         
+        - column:
+            constraints:
+              nullable: false
+            name: point_id
+            type: CHAR(36)
+        tableName: chemin_de_points_point_mapping
+- changeSet:
+    id: 2
+    author: ltiehi
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: chemin_de_point_id
+        baseTableName: chemin_de_points_point_mapping
+        constraintName: fk_chemin_de_points_point
+        onDelete: restrict
+        onUpdate: cascade
+        referencedColumnNames: id
+        referencedTableName: chemin_de_points
+- changeSet:
+    id: 3
+    author: ltiehi
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: point_id
+        baseTableName: chemin_de_points_point_mapping
+        constraintName: fk_chemin_de_points_point_mapping_point
+        onDelete: restrict
+        onUpdate: cascade
+        referencedColumnNames: id
+        referencedTableName: point
+- changeSet:
+    id: 4
+    author: ltiehi
+    changes:
+    - addUniqueConstraint:
+        columnNames: chemin_de_point_id, point_id
+        constraintName: unique_chemin_de_points_point
+        tableName: chemin_de_points_point_mapping  
