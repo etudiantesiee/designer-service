@@ -15,7 +15,7 @@ import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
 public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 	
     /**
-     * 
+     * Constructeur avec nom
      * @param nom
      */
 	public MaisonAvecCercleEtEllipse(String nom) {

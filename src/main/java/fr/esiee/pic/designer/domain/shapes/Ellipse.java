@@ -1,5 +1,6 @@
 package fr.esiee.pic.designer.domain.shapes;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -40,7 +41,7 @@ public class Ellipse {
     /**
      * Centre de l'ellipse
      */
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="centre", nullable=false)
     private final Point centre;
 	
@@ -60,7 +61,7 @@ public class Ellipse {
     /**
      * Couleur de l'ellipse
      */
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="couleur", nullable=true)
     private final Couleur couleur;
 

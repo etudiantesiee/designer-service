@@ -3,6 +3,7 @@ package fr.esiee.pic.designer.domain.shapes;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -40,7 +41,7 @@ public final class CheminDePoints {
 	/**
 	 * List de points ordonnés
 	 */
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
         name="chemin_de_points_point_mapping",
         joinColumns=@JoinColumn(name="chemin_de_point_id", referencedColumnName="id", nullable = false),
@@ -52,14 +53,14 @@ public final class CheminDePoints {
 	/**
 	 * Coloriage de fond
 	 */
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="couleur", nullable=true)
 	private Couleur couleur;
 	
 	/**
 	 * Coloriage des traits
 	 */
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="couleur_traits_laison", nullable=true)
 	private Couleur couleurTraitsLaison;
 	

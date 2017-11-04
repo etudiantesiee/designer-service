@@ -12,3 +12,9 @@ databaseChangeLog:
       file: db/changelog/version/0.0.1/04_create_table_chemin_de_points.yaml
   - include:
       file: db/changelog/version/0.0.1/05_create_table_chemin_de_points_points_mapping.yaml
+  - include:
+      file: db/changelog/version/0.0.1/06_create_table_element_graphique.yaml
+  - include:
+      file: db/changelog/version/0.0.1/07_create_table_element_graphique_ellipse_mapping.yaml
+  - include:
+      file: db/changelog/version/0.0.1/08_create_table_element_graphique_chemin_de_point_mapping.yaml

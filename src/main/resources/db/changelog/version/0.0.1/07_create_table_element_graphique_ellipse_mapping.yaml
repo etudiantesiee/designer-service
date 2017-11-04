@@ -1,0 +1,50 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ltiehi
+    changes:
+    - createTable:
+        columns:    
+        - column:
+            constraints:
+              nullable: false
+            name: element_graphique_id
+            type: char(36)         
+        - column:
+            constraints:
+              nullable: false
+            name: ellipse_id
+            type: CHAR(36)
+        tableName: element_graphique_ellipse_mapping
+- changeSet:
+    id: 2
+    author: ltiehi
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: element_graphique_id
+        baseTableName: element_graphique_ellipse_mapping
+        constraintName: fk_element_graphique_ellipse_mapping_element_graphique
+        onDelete: restrict
+        onUpdate: cascade
+        referencedColumnNames: id
+        referencedTableName: element_graphique
+- changeSet:
+    id: 3
+    author: ltiehi
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: ellipse_id
+        baseTableName: element_graphique_ellipse_mapping
+        constraintName: fk_element_graphique_ellipse_mapping_ellipse
+        onDelete: restrict
+        onUpdate: cascade
+        referencedColumnNames: id
+        referencedTableName: ellipse
+- changeSet:
+    id: 4
+    author: ltiehi
+    changes:
+    - addUniqueConstraint:
+        columnNames: element_graphique_id, ellipse_id
+        constraintName: unique_elt_graphique_id_ellipse_id
+        tableName: element_graphique_ellipse_mapping  

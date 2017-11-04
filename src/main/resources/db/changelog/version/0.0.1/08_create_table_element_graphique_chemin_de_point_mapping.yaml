@@ -1,0 +1,50 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ltiehi
+    changes:
+    - createTable:
+        columns:    
+        - column:
+            constraints:
+              nullable: false
+            name: element_graphique_id
+            type: char(36)         
+        - column:
+            constraints:
+              nullable: false
+            name: chemin_de_point_id
+            type: CHAR(36)
+        tableName: element_graphique_chemin_de_point_mapping
+- changeSet:
+    id: 2
+    author: ltiehi
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: element_graphique_id
+        baseTableName: element_graphique_chemin_de_point_mapping
+        constraintName: fk_element_graphique_chemin_de_point_mapping_element_graphique
+        onDelete: restrict
+        onUpdate: cascade
+        referencedColumnNames: id
+        referencedTableName: element_graphique
+- changeSet:
+    id: 3
+    author: ltiehi
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: chemin_de_point_id
+        baseTableName: element_graphique_chemin_de_point_mapping
+        constraintName: fk_element_graphique_ellipse_mapping_chemin_de_point_id
+        onDelete: restrict
+        onUpdate: cascade
+        referencedColumnNames: id
+        referencedTableName: chemin_de_points
+- changeSet:
+    id: 4
+    author: ltiehi
+    changes:
+    - addUniqueConstraint:
+        columnNames: element_graphique_id, chemin_de_point_id
+        constraintName: unique_element_graphique_id_chemin_de_point_id
+        tableName: element_graphique_chemin_de_point_mapping  

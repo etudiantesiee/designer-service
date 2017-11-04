@@ -3,6 +3,7 @@ package fr.esiee.pic.designer.domain.shapes;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -37,12 +38,13 @@ public class ElementGraphique {
     /**
      * Nom de l'élément graphique
      */
-    private final String nom;
+    @Column(name="nom", nullable=false)
+    private String nom;
     
     /**
      * Liste des ellipses composant le dessin
      */
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
         name="element_graphique_ellipse_mapping",
         joinColumns=@JoinColumn(name="element_graphique_id", referencedColumnName="id", nullable = false),
@@ -54,7 +56,7 @@ public class ElementGraphique {
     /**
      * Liste des figures faites à partir de points
      */
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
         name="element_graphique_chemin_de_point_mapping",
         joinColumns=@JoinColumn(name="element_graphique_id", referencedColumnName="id", nullable = false),
@@ -62,6 +64,13 @@ public class ElementGraphique {
         uniqueConstraints = @UniqueConstraint(columnNames = {"element_graphique_id", "chemin_de_point_id"}))
     @Fetch(value = FetchMode.SUBSELECT)
     private final List<CheminDePoints> formesAvecPoints;
+    
+    /**
+     * Default constructeur
+     */
+    public ElementGraphique() {
+        this("");
+    }
     
     /**
      * Constructeur par défaut

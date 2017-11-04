@@ -1,0 +1,26 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ltiehi
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: id
+            type: char(36)     
+        - column:
+            constraints:
+              nullable: false
+            name: nom
+            type: VARCHAR(50) 
+        tableName: element_graphique
+- changeSet:
+    id: 2
+    author: ltiehi
+    changes:
+    - addPrimaryKey:
+        columnNames: id
+        constraintName: element_graphique_pk
+        tableName: element_graphique
