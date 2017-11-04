@@ -33,6 +33,9 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
     
     @Override
     public void onApplicationEvent(ApplicationReadyEvent arg0) {
+        LOGGER.info("Suppression de l'ancienne configuration");
+        elementgraphiqueRepo.deleteAll();
+        
         LOGGER.info("Créateur des composants graphiques de l'application");
         PersonnageManga manga = new PersonnageManga("Figure 10");
         add(manga);
