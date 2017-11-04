@@ -20,6 +20,7 @@ public abstract class CreateurDeForme {
     /**
      * Default hidden constructeur 
      */
+    @SuppressWarnings("unused")
     private CreateurDeForme() {
         this("");
     }
