@@ -48,7 +48,7 @@ public final class CheminDePoints {
         inverseJoinColumns=@JoinColumn(name="point_id", referencedColumnName="id", nullable = false),
         uniqueConstraints = @UniqueConstraint(columnNames = {"chemin_de_point_id", "point_id"}))
     @Fetch(value = FetchMode.SUBSELECT)
-	private final List<Point> points;
+	private List<Point> points;
 	
 	/**
 	 * Coloriage de fond
@@ -149,42 +149,48 @@ public final class CheminDePoints {
 		Point[] pointsArray = new Point[nbPoint];
 		return this.points.toArray(pointsArray).clone();
 	}
+	
+	/**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
 
-	/**
-	 * Getter de la couleur
-	 * 
-	 * @return
-	 */
-	public Couleur getCouleurDeFond() {
-		return couleur;
-	}
-	
-	/**
-	 * Getter de la couleur des traits
-	 * 
-	 * @return
-	 */
-	public Couleur getCouleurTraits() {
-		return couleurTraitsLaison;
-	}
-	
-	/**
-	 * Retourne true si les traits de laison entre les points sont fin.
-	 * 
-	 * @return
-	 */
-	public boolean aDesTraitsFin() {
-		return traitDeLaisonFin;
-	}
-	
-	/**
-	 * Retoure vraie si les points extremes doivent être reliés.
-	 * 
-	 * @return
-	 */
-	public boolean relierLesPointsExtremes() {
-		return relierLesPointsExtremes;
-	}
+    /**
+     * @return the points
+     */
+    public List<Point> getPoints() {
+        return points;
+    }
+
+    /**
+     * @return the couleur
+     */
+    public Couleur getCouleur() {
+        return couleur;
+    }
+
+    /**
+     * @return the couleurTraitsLaison
+     */
+    public Couleur getCouleurTraitsLaison() {
+        return couleurTraitsLaison;
+    }
+
+    /**
+     * @return the traitDeLaisonFin
+     */
+    public Boolean getTraitDeLaisonFin() {
+        return traitDeLaisonFin;
+    }
+
+    /**
+     * @return the relierLesPointsExtremes
+     */
+    public boolean getRelierLesPointsExtremes() {
+        return relierLesPointsExtremes;
+    }
 	
 	@Override
 	public String toString() {

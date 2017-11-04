@@ -107,10 +107,10 @@ public final class AfficheurDeFormes {
 		// Affichage des chemins de points
 		for (CheminDePoints c : cheminsDePoints) {
 			Point[] points = c.toArray();
-			Couleur couleur = c.getCouleurDeFond();
-			Couleur couleurDesTraits = c.getCouleurTraits();
-			boolean traitFin = c.aDesTraitsFin();
-			boolean relierLesPointsExtreme = c.relierLesPointsExtremes();
+			Couleur couleur = c.getCouleur();
+			Couleur couleurDesTraits = c.getCouleurTraitsLaison();
+			boolean traitFin = c.getTraitDeLaisonFin();
+			boolean relierLesPointsExtreme = c.getRelierLesPointsExtremes();
 			
 			// Appel de la factory
 			Component shapeComp = shapesFactory.produceShapeFromPoints(points, couleur, couleurDesTraits, traitFin, relierLesPointsExtreme);

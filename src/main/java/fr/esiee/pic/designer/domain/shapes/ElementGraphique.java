@@ -51,7 +51,7 @@ public class ElementGraphique {
         inverseJoinColumns=@JoinColumn(name="ellipse_id", referencedColumnName="id", nullable = false),
         uniqueConstraints = @UniqueConstraint(columnNames = {"element_graphique_id", "ellipse_id"}))
     @Fetch(value = FetchMode.SUBSELECT)
-    private final List<Ellipse> ellipses;
+    private List<Ellipse> ellipses;
     
     /**
      * Liste des figures faites à partir de points
@@ -63,13 +63,13 @@ public class ElementGraphique {
         inverseJoinColumns=@JoinColumn(name="chemin_de_point_id", referencedColumnName="id", nullable = false),
         uniqueConstraints = @UniqueConstraint(columnNames = {"element_graphique_id", "chemin_de_point_id"}))
     @Fetch(value = FetchMode.SUBSELECT)
-    private final List<CheminDePoints> formesAvecPoints;
+    private List<CheminDePoints> formesAvecPoints;
     
     /**
-     * Default constructeur
+     * Default constructor
      */
     public ElementGraphique() {
-        this("");
+        super();
     }
     
     /**
@@ -99,6 +99,13 @@ public class ElementGraphique {
         this.ellipses.add(ellipse);
     }
     
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
+
     /**
      * @return the nom
      */

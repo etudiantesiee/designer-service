@@ -31,13 +31,20 @@ public class Point {
      * Abscisse du point
      */
     @Column(name="x", nullable=false, updatable=false)
-    private final double x;
+    private double x;
 
     /**
      * Ordonnée du point
      */
     @Column(name="y", nullable=false, updatable=false)
-    private final double y;
+    private double y;
+    
+    /**
+     * Default constructor
+     */
+    public Point() {
+        super();
+    }
 
     /**
      * Constructeur
@@ -49,6 +56,13 @@ public class Point {
         super();
         this.x = x;
         this.y = y;
+    }
+
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
     }
 
     /**

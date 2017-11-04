@@ -44,7 +44,22 @@ public class Couleur {
     @Column(length=36)
     private String id;
 	
-	private final float r, g, b, a;
+	private float r, g, b, a;
+	
+	/**
+	 * Default constructor
+	 */
+	public Couleur() {
+        super();
+    }
+	
+	/**
+	 * Construct a color from another color
+	 */
+	public Couleur(Couleur c) {
+        this(c.r, c.g, c.b, c.a);
+        
+    }
 	
 	/**
 	 * Construit une couleur RGB à partir des valeurs de Rouge, Vert et bleu précisées. 
@@ -63,8 +78,16 @@ public class Couleur {
 		this.b = b;
 		this.a = a;
 	}
+	
 
 	/**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
 	 * Getter de Rouge
 	 * 
 	 * @return

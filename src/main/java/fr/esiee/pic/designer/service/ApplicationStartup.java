@@ -10,10 +10,8 @@ import org.springframework.stereotype.Component;
 import fr.esiee.pic.designer.Application;
 import fr.esiee.pic.designer.design.exemple.PersonnageManga;
 import fr.esiee.pic.designer.domain.shapes.ElementGraphique;
-import fr.esiee.pic.designer.domain.shapes.Ellipse;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
 import fr.esiee.pic.designer.repository.ElementGraphiqueRepository;
-import fr.esiee.pic.designer.repository.EllipseRepository;
 
 /**
  * @author etudiant
@@ -33,9 +31,6 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
     @Autowired
     ElementGraphiqueRepository elementgraphiqueRepo;
     
-    @Autowired
-    EllipseRepository ellipseRepo;
-
     @Override
     public void onApplicationEvent(ApplicationReadyEvent arg0) {
         LOGGER.info("Créateur des composants graphiques de l'application");

@@ -43,19 +43,19 @@ public class Ellipse {
      */
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="centre", nullable=false)
-    private final Point centre;
+    private Point centre;
 	
 	/**
 	 * La largeur de l'éllipse
 	 */
-    @Column(name="l", nullable=false, updatable=false)
-	private final double l;
+    @Column(name="l", nullable=false)
+	private double l;
 	
 	/**
 	 * La hauteur de l'éllipse
 	 */
-    @Column(name="h", nullable=false, updatable=false)
-	private final double h;
+    @Column(name="h", nullable=false)
+	private double h;
     
 
     /**
@@ -63,7 +63,14 @@ public class Ellipse {
      */
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="couleur", nullable=true)
-    private final Couleur couleur;
+    private Couleur couleur;
+    
+    /**
+     * Default constructor
+     */
+    public Ellipse() {
+        super();
+    }
 
 	/**
 	 * Construit une éllipse à partir de :
@@ -105,7 +112,14 @@ public class Ellipse {
         this.h = h;
         this.couleur = couleur;
     }
-	
+    
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
+    }
+
     /**
      * @return the centre
      */
