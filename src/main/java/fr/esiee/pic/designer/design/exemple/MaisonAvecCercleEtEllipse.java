@@ -14,7 +14,15 @@ import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
  */
 public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 	
-	/**
+    /**
+     * 
+     * @param nom
+     */
+	public MaisonAvecCercleEtEllipse(String nom) {
+        super(nom);
+    }
+
+    /**
 	 * Point en bas à gauche de la maison
 	 */
 	private static final Point BASE_BAS_GAUCHE_MAISON = new Point(400, 750);

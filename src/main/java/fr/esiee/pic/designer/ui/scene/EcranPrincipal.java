@@ -66,7 +66,7 @@ public final class EcranPrincipal {
 		// Affichage de la grille
 		double longueurEcran = this.afficheur.getLongueurAffichage();
 		double largeurEcran = this.afficheur.getLargeurAffichage();
-		Grille grille = new Grille(longueurEcran, largeurEcran, UNITE_HORIZONTALE_GRILLE, UNITE_VERTIACLE_GRILLE);
+		Grille grille = new Grille("Grille", longueurEcran, largeurEcran, UNITE_HORIZONTALE_GRILLE, UNITE_VERTIACLE_GRILLE);
 		listDeDessins.add(grille);
 	}
 	
@@ -77,15 +77,15 @@ public final class EcranPrincipal {
 		 initDemo();
 		
 		// Affichage des dessins du groupe 1
-		DessinsGroupe1 grp1 = new DessinsGroupe1();
+		DessinsGroupe1 grp1 = new DessinsGroupe1("Groupe 1");
 		listDeDessins.add(grp1);
 		
 		// Affichage des dessins du groupe 2
-		DessinsGroupe2 grp2 = new DessinsGroupe2();
+		DessinsGroupe2 grp2 = new DessinsGroupe2("Groupe 2");
 		listDeDessins.add(grp2);
 		
 		// Affichage des dessins du groupe 2
-		DessinsGroupe3 grp3 = new DessinsGroupe3();
+		DessinsGroupe3 grp3 = new DessinsGroupe3("Groupe 3");
 		listDeDessins.add(grp3);
 	}
 
@@ -94,11 +94,11 @@ public final class EcranPrincipal {
 	 */
 	public void initDemo() {
 		// Affichage de la démo : maison, soleil, lune...
-		MaisonAvecCercleEtEllipse demoMaison = new MaisonAvecCercleEtEllipse();
+		MaisonAvecCercleEtEllipse demoMaison = new MaisonAvecCercleEtEllipse("Une maison avec une ellipse");
 		listDeDessins.add(demoMaison);
 		
 		// Affichage de la démo : personnage manga
-		PersonnageManga demoManga = new PersonnageManga();
+		PersonnageManga demoManga = new PersonnageManga("Un personnage manga");
 		listDeDessins.add(demoManga);
 	}
 	

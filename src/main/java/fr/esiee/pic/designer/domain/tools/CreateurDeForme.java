@@ -16,13 +16,20 @@ public abstract class CreateurDeForme {
      * Encapsule tous les élements du grahique
      */
     private final ElementGraphique elementGraphique;
+    
+    /**
+     * Default hidden constructeur 
+     */
+    private CreateurDeForme() {
+        this("");
+    }
 	
 	/**
 	 * Constructeur par defaut
 	 */
-	public CreateurDeForme() {
+	public CreateurDeForme(String nom) {
 		super();
-		elementGraphique = new ElementGraphique();
+		elementGraphique = new ElementGraphique(nom);
 	}
 	
 	/**

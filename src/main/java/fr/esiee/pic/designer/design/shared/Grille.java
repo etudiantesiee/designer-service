@@ -51,8 +51,9 @@ public class Grille extends CreateurDeForme {
 	 * @param uniteLongueur
 	 * @param uniteLargeur
 	 */
-	public Grille(double longueurEcran, double largeurEcran,
+	public Grille(String nom, double longueurEcran, double largeurEcran,
 			double uniteLongueur, double uniteLargeur) {
+	    super(nom);
 		this.uniteLongueur = uniteLongueur;
 		this.uniteLargeur = uniteLargeur;
 		this.longueurEcran = longueurEcran;

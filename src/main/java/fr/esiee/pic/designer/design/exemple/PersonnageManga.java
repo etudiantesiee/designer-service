@@ -13,7 +13,11 @@ import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
  */
 public class PersonnageManga extends CreateurDeForme {
 
-	/**
+	public PersonnageManga(String nom) {
+        super(nom);
+    }
+
+    /**
 	 * Pas de dessin horizontale
 	 */
 	private static final double UNITE_HORIZONTALE = 50;

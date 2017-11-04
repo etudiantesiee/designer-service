@@ -10,7 +10,11 @@ import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
  */
 public class DessinsGroupe1 extends CreateurDeForme {
 
-	@Override
+	public DessinsGroupe1(String nom) {
+        super(nom);
+    }
+
+    @Override
 	public void dessiner() {
 		// Ajout vos dessins ici
 		// Pensez à désactiver les dessins de la démo 
