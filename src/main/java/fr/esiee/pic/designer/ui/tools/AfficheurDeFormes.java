@@ -9,6 +9,7 @@ import fr.esiee.pic.designer.awt.factory.ShapesFactory;
 import fr.esiee.pic.designer.awt.factory.impl.ShapesFactoryImpl;
 import fr.esiee.pic.designer.domain.shapes.CheminDePoints;
 import fr.esiee.pic.designer.domain.shapes.Couleur;
+import fr.esiee.pic.designer.domain.shapes.ElementGraphique;
 import fr.esiee.pic.designer.domain.shapes.Ellipse;
 import fr.esiee.pic.designer.domain.shapes.Point;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
@@ -82,9 +83,11 @@ public final class AfficheurDeFormes {
 	 * 
 	 * @param forme
 	 */
-	public void afficher(CreateurDeForme forme) {
+	public void afficher(CreateurDeForme createurDeForme) {
 		// Dessin des éléments de la forme
-		forme.dessiner();
+	    createurDeForme.dessiner();
+		
+		ElementGraphique forme = createurDeForme.getElementGraphique();
 		
 		// Recupération de la liste des ellipses
 		List<Ellipse> ellipses = forme.getEllipses();

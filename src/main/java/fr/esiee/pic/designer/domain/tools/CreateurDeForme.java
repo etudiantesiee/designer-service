@@ -1,9 +1,7 @@
 package fr.esiee.pic.designer.domain.tools;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import fr.esiee.pic.designer.domain.shapes.CheminDePoints;
+import fr.esiee.pic.designer.domain.shapes.ElementGraphique;
 import fr.esiee.pic.designer.domain.shapes.Ellipse;
 
 /**
@@ -14,23 +12,17 @@ import fr.esiee.pic.designer.domain.shapes.Ellipse;
  */
 public abstract class CreateurDeForme {
 
-	/**
-	 * Liste des ellipses composant le dessin
-	 */
-	private final List<Ellipse> ellipses;
-	
-	/**
-	 * Liste des figures faites à partir de points
-	 */
-	private final List<CheminDePoints> formesAvecPoints;
+    /**
+     * Encapsule tous les élements du grahique
+     */
+    private final ElementGraphique elementGraphique;
 	
 	/**
 	 * Constructeur par defaut
 	 */
 	public CreateurDeForme() {
 		super();
-		ellipses = new ArrayList<>();
-		formesAvecPoints = new ArrayList<>();
+		elementGraphique = new ElementGraphique();
 	}
 	
 	/**
@@ -40,7 +32,7 @@ public abstract class CreateurDeForme {
 	 */
 	protected CheminDePoints demarrerNouveauDessinAvecDesPoints() {
 		CheminDePoints nouveauChemin = new CheminDePoints();
-		this.formesAvecPoints.add(nouveauChemin);
+		this.elementGraphique.ajoutNouveauChemin(nouveauChemin);
 		
 		return nouveauChemin;
 	}
@@ -52,7 +44,7 @@ public abstract class CreateurDeForme {
 	 * @return
 	 */
 	protected CreateurDeForme ajouterEllipse(Ellipse ellipse) {
-		this.ellipses.add(ellipse);
+		this.elementGraphique.ajoutEllipse(ellipse);
 		return this;
 	}
 	
@@ -61,20 +53,10 @@ public abstract class CreateurDeForme {
 	 */
 	public abstract void dessiner();
 
-	/**
-	 * Getter de la liste des ellipses
-	 * 
-	 * @return
-	 */
-	public List<Ellipse> getEllipses() {
-		return ellipses;
-	}
-
-	/**
-	 * Getter de la liste des formes faites à partir de points
-	 * @return
-	 */
-	public List<CheminDePoints> getFormesAvecPoints() {
-		return formesAvecPoints;
-	}
+    /**
+     * @return the elementGraphique
+     */
+    public ElementGraphique getElementGraphique() {
+        return elementGraphique;
+    }
 }
