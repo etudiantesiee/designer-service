@@ -24,7 +24,12 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: h
-            type: double
+            type: double       
+        - column:
+            constraints:
+              nullable: true
+            name: couleur
+            type: char(36)
         tableName: ellipse
 - changeSet:
     id: 2

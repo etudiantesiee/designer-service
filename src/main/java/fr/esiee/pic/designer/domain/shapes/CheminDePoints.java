@@ -1,4 +1,4 @@
-package fr.esiee.pic.designer.domain;
+package fr.esiee.pic.designer.domain.shapes;
 
 import java.util.LinkedList;
 import java.util.List;

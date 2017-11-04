@@ -1,4 +1,4 @@
-package fr.esiee.pic.designer.domain;
+package fr.esiee.pic.designer.domain.shapes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -55,29 +55,15 @@ public class Ellipse {
 	 */
     @Column(name="h", nullable=false, updatable=false)
 	private final double h;
+    
 
-	/**
-	 * Construit une éllipse à partir de :
-	 * 	- des corrdonnées de son centre : x (abscisse) et y (ordonnée)
-	 * 	- sa largeur l
-	 * 	- de sa hauteur h
-	 * Si la h = l
-	 * 	- l'éllipse devient un cercle.
-	 * 	- l devient le diametre
-	 * 	- h : devient le diametre
-	 * 
-	 * @param x
-	 * @param y
-	 * @param l
-	 * @param h
-	 */
-	public Ellipse(double x, double y, double l, double h) {
-		super();
-		this.centre = new Point(x, y);
-		this.l = l;
-		this.h = h;
-	}
-	
+    /**
+     * Couleur de l'ellipse
+     */
+    @ManyToOne
+    @JoinColumn(name="couleur", nullable=true)
+    private final Couleur couleur;
+
 	/**
 	 * Construit une éllipse à partir de :
 	 * 	- des corrdonnées de son centre : le point centreEllipse
@@ -95,7 +81,29 @@ public class Ellipse {
 		this.centre = centre;
 		this.l = l;
 		this.h = h;
+		this.couleur = null;
 	}
+	
+	/**
+     * Construit une éllipse à partir de :
+     *  - des corrdonnées de son centre : le point centreEllipse
+     * Si la h = l
+     *  - l'éllipse devient un cercle.
+     *  - l devient le diametre
+     *  - h : devient le diametre
+     *  - couleur : la couleur de l'ellipse
+     * 
+     * @param centreEllipse
+     * @param l
+     * @param h
+     */
+    public Ellipse(Point centre, double l, double h, Couleur couleur) {
+        super();
+        this.centre = centre;
+        this.l = l;
+        this.h = h;
+        this.couleur = couleur;
+    }
 	
     /**
      * @return the centre
@@ -116,6 +124,13 @@ public class Ellipse {
      */
     public double getH() {
         return h;
+    }
+    
+    /**
+     * @return the couleur
+     */
+    public Couleur getCouleur() {
+        return couleur;
     }
 
     /* (non-Javadoc)

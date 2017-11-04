@@ -1,4 +1,4 @@
-package fr.esiee.pic.designer.domain;
+package fr.esiee.pic.designer.domain.shapes;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
