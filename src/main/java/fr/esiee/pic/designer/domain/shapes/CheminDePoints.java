@@ -114,7 +114,7 @@ public final class CheminDePoints {
 	 * @return
 	 */
 	public CheminDePoints couleurDesTrait(Couleur couleurDesTrait) {
-		this.couleurTraitsLaison = couleur;
+		this.couleurTraitsLaison = couleurDesTrait;
 		return this;
 	}
 	
