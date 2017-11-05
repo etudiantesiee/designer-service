@@ -129,5 +129,41 @@ public class ElementGraphique {
     public List<CheminDePoints> getFormesAvecPoints() {
         return formesAvecPoints;
     }
+    
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    /**
+     * @param nom the nom to set
+     */
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    /**
+     * @param ellipses the ellipses to set
+     */
+    public void setEllipses(List<Ellipse> ellipses) {
+        this.ellipses = ellipses;
+    }
+
+    /**
+     * @param formesAvecPoints the formesAvecPoints to set
+     */
+    public void setFormesAvecPoints(List<CheminDePoints> formesAvecPoints) {
+        this.formesAvecPoints = formesAvecPoints;
+    }
+
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return "ElementGraphique [id=" + id + ", nom=" + nom + ", ellipses="
+                + ellipses + ", formesAvecPoints=" + formesAvecPoints + "]";
+    }
 }

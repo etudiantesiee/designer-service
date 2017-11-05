@@ -53,14 +53,14 @@ public final class CheminDePoints {
 	/**
 	 * Coloriage de fond
 	 */
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
     @JoinColumn(name="couleur", nullable=true)
 	private Couleur couleur;
 	
 	/**
 	 * Coloriage des traits
 	 */
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
     @JoinColumn(name="couleur_traits_laison", nullable=true)
 	private Couleur couleurTraitsLaison;
 	

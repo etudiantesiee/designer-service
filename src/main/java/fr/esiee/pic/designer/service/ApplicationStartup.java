@@ -7,11 +7,10 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
-import fr.esiee.pic.designer.Application;
+import fr.esiee.pic.designer.design.exemple.MaisonAvecCercleEtEllipse;
 import fr.esiee.pic.designer.design.exemple.PersonnageManga;
 import fr.esiee.pic.designer.domain.shapes.ElementGraphique;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
-import fr.esiee.pic.designer.repository.ElementGraphiqueRepository;
 
 /**
  * @author etudiant
@@ -23,22 +22,25 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
     /**
      * Logger
      */
-    public static final Logger LOGGER = LogManager.getLogger(Application.class.getName());
+    public static final Logger LOGGER = LogManager.getLogger(ApplicationStartup.class.getName());
     
     /**
-     * Element grpahique repo
+     * Element grpahique service
      */
     @Autowired
-    ElementGraphiqueRepository elementgraphiqueRepo;
+    ElementGraphiqueService elementgraphiqueService;
     
     @Override
     public void onApplicationEvent(ApplicationReadyEvent arg0) {
         LOGGER.info("Suppression de l'ancienne configuration");
-        elementgraphiqueRepo.deleteAll();
+        elementgraphiqueService.deleteAll();
         
         LOGGER.info("Créateur des composants graphiques de l'application");
-        PersonnageManga manga = new PersonnageManga("Figure 10");
+        PersonnageManga manga = new PersonnageManga("MangaEsiee");
         add(manga);
+        
+        MaisonAvecCercleEtEllipse maisonAvecCercleEtEllipse = new MaisonAvecCercleEtEllipse("maisonAvecCercleEtEllipse");
+        add(maisonAvecCercleEtEllipse);
         
         LOGGER.info("Les composants graphiques de l'application ont été crées");
     }
@@ -57,7 +59,7 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
         LOGGER.info("Sauvegarde du graphique : " + nom + " en cours...");
 
         // Persistance
-        elementgraphiqueRepo.save(g);
+        elementgraphiqueService.saveOrUpdate(g);
         
         LOGGER.info("Sauvegarde du graphique : " + nom + " terminé avec succes");
     }

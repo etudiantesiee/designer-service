@@ -42,10 +42,15 @@ public class ElementGraphiqueController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public HttpEntity<List<ElementGraphique>> findElementGraphique(ElementGraphique elementGraphique) {
         List<ElementGraphique> allElts;
-        if (elementGraphique == null || elementGraphique.getId() == null || elementGraphique.getNom() == null) {
-            LOGGER.info("Récupération de toutes les elements graphique");
+        
+        LOGGER.info("Received data : " + elementGraphique);
+        if (elementGraphique == null || (elementGraphique.getId() == null && elementGraphique.getNom() == null)) {
+            LOGGER.info("Récupération de tous les elements graphiques");
             allElts = this.elementgraphiqueRepo.findAll();
         } else {
+            LOGGER.info("Recherche d'un element graphique spécifique. "
+                    + "Les criteres de recherche sur l'id et le nom sont : "
+                    + "id = " + elementGraphique.getId() + " Nom = " + elementGraphique.getNom());
             allElts = this.elementgraphiqueRepo.findAll(Example.of(elementGraphique));
         }
         

@@ -86,6 +86,43 @@ public class Couleur {
     public String getId() {
         return id;
     }
+    
+    
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * @param r the r to set
+     */
+    public void setR(float r) {
+        this.r = r;
+    }
+
+    /**
+     * @param g the g to set
+     */
+    public void setG(float g) {
+        this.g = g;
+    }
+
+    /**
+     * @param b the b to set
+     */
+    public void setB(float b) {
+        this.b = b;
+    }
+
+    /**
+     * @param a the a to set
+     */
+    public void setA(float a) {
+        this.a = a;
+    }
 
     /**
 	 * Getter de Rouge

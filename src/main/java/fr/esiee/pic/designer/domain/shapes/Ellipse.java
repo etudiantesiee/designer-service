@@ -41,7 +41,7 @@ public class Ellipse {
     /**
      * Centre de l'ellipse
      */
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name="centre", nullable=false)
     private Point centre;
 	
@@ -61,7 +61,7 @@ public class Ellipse {
     /**
      * Couleur de l'ellipse
      */
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name="couleur", nullable=true)
     private Couleur couleur;
     
