@@ -40,27 +40,31 @@ public class ElementGraphiqueService {
      * 
      * @param eltGraphique
      */
-    public void saveOrUpdate(ElementGraphique eltGraphique) {
+    public ElementGraphique saveOrUpdate(ElementGraphique eltGraphique) {
         List<Ellipse> ellipses = eltGraphique.getEllipses();
         List<CheminDePoints> cheminsDePoints = eltGraphique.getFormesAvecPoints();
         
         // Update des couleurs d'ellipse si elles existent avec leur id
-        for(Ellipse ellipse : ellipses) {
-            Couleur eCouleur = ellipse.getCouleur();
-            
-            updateCouleurWithId(eCouleur);
+        if(ellipses != null) {
+            for(Ellipse ellipse : ellipses) {
+                Couleur eCouleur = ellipse.getCouleur();
+                
+                updateCouleurWithId(eCouleur);
+            }
         }
         
         // Update des couleurs de chemin de points si elles existent avec leur id
-        for(CheminDePoints cheminDePoints : cheminsDePoints) {
-            Couleur cCouleur = cheminDePoints.getCouleur();
-            Couleur cCouleurTraitLiaison = cheminDePoints.getCouleurTraitsLaison();
-            
-            updateCouleurWithId(cCouleur);
-            updateCouleurWithId(cCouleurTraitLiaison);
+        if(cheminsDePoints != null) {
+            for(CheminDePoints cheminDePoints : cheminsDePoints) {
+                Couleur cCouleur = cheminDePoints.getCouleur();
+                Couleur cCouleurTraitLiaison = cheminDePoints.getCouleurTraitsLaison();
+                
+                updateCouleurWithId(cCouleur);
+                updateCouleurWithId(cCouleurTraitLiaison);
+            }
         }
         
-        elementgraphiqueRepo.save(eltGraphique);
+        return elementgraphiqueRepo.save(eltGraphique);
     }
     
     /**

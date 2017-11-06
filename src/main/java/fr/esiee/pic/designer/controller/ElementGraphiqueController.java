@@ -7,16 +7,20 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import fr.esiee.pic.designer.Application;
 import fr.esiee.pic.designer.domain.shapes.ElementGraphique;
 import fr.esiee.pic.designer.repository.ElementGraphiqueRepository;
+import fr.esiee.pic.designer.service.ElementGraphiqueService;
 
 
 @RestController
@@ -34,8 +38,11 @@ public class ElementGraphiqueController {
     @Autowired
     ElementGraphiqueRepository elementgraphiqueRepo;
     
+    @Autowired
+    ElementGraphiqueService elementGraphiqueService;
+    
     /**
-     * All segmentSynoptic
+     * All elementGraphique
      * 
      * @return
      */
@@ -60,5 +67,24 @@ public class ElementGraphiqueController {
         }
         
         return new ResponseEntity<List<ElementGraphique>>(allElts, HttpStatus.OK);
+    }
+    
+    /**
+     * Create new elementGraphique
+     * 
+     * @param elementGraphiqueToCreate
+     * @param ucBuilder
+     * @return
+     */
+    @RequestMapping(value = "", method = RequestMethod.POST)
+    public ResponseEntity<ElementGraphique> createElementGraphique(@RequestBody ElementGraphique elementGraphiqueToCreate, UriComponentsBuilder ucBuilder) {
+        LOGGER.info("Créatin d'un nouvel élément graphique : " + elementGraphiqueToCreate.toString());
+        
+        ElementGraphique createElt = this.elementGraphiqueService.saveOrUpdate(elementGraphiqueToCreate);
+        
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(ucBuilder.path("/items/{id}").buildAndExpand(createElt.getId()).toUri());
+        
+        return new ResponseEntity<ElementGraphique>(createElt, headers, HttpStatus.CREATED);
     }
 }
