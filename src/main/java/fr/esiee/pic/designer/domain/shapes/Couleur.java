@@ -43,6 +43,11 @@ public class Couleur {
      */
     public static final Couleur ROUGE = new Couleur(1f, 0f, 0f, 0.8f);
     
+    /**
+     * Couleur Jaune
+     */
+    public static final Couleur BLEUE = new Couleur(0f, 0f, 1f, 0.8f);
+    
 	
 	@Id
     @GeneratedValue(generator="system-uuid")

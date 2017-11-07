@@ -24,3 +24,11 @@ databaseChangeLog:
         columnNames: id
         constraintName: element_graphique_pk
         tableName: element_graphique
+- changeSet:
+    id: 3
+    author: ltiehi
+    changes:
+    - addUniqueConstraint:
+        columnNames: nom
+        constraintName: unique_element_graphique_nom
+        tableName: element_graphique

@@ -3,6 +3,7 @@ package fr.esiee.pic.designer.service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
@@ -11,6 +12,7 @@ import fr.esiee.pic.designer.design.exemple.MaisonAvecCercleEtEllipse;
 import fr.esiee.pic.designer.design.exemple.PersonnageManga;
 import fr.esiee.pic.designer.domain.shapes.ElementGraphique;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
+import fr.esiee.pic.designer.repository.ElementGraphiqueRepository;
 
 /**
  * @author etudiant
@@ -28,14 +30,26 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
      * Element grpahique service
      */
     @Autowired
-    ElementGraphiqueService elementgraphiqueService;
+    private ElementGraphiqueService elementgraphiqueService;
+    
+    /**
+     * Element grpahique repo
+     */
+    @Autowired
+    private ElementGraphiqueRepository elementgraphiqueREpo;
+    
+    @Value("${service.startup.shapes.deleteall}")
+    private boolean deleteAllShapesAtStartup;
     
     @Override
     public void onApplicationEvent(ApplicationReadyEvent arg0) {
-        LOGGER.info("Suppression de l'ancienne configuration");
-        elementgraphiqueService.deleteAll();
         
-        LOGGER.info("Créateur des composants graphiques de l'application");
+        if(deleteAllShapesAtStartup) {
+            LOGGER.info("Tous les dessins seront supprimés avant l'ajout des nouveaux");
+            elementgraphiqueService.deleteAll();
+        }
+        
+        LOGGER.info("Création des composants graphiques de l'application");
         PersonnageManga manga = new PersonnageManga("MangaEsiee");
         add(manga);
         
@@ -57,6 +71,15 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
         String nom = g.getNom();
         
         LOGGER.info("Sauvegarde du graphique : " + nom + " en cours...");
+        
+        ElementGraphique eltGraphiqueExistant = elementgraphiqueREpo.findByNom(nom);
+        
+        if(eltGraphiqueExistant != null) {
+            LOGGER.info("L'élément graphique " + nom + " existe déjà. Il sera mis à jour.");
+            g.setId(eltGraphiqueExistant.getId());
+        } else {
+            LOGGER.info("L'élément graphique " + nom + " n'existe pas encore. Il sera crée.");
+        }
 
         // Persistance
         elementgraphiqueService.saveOrUpdate(g);

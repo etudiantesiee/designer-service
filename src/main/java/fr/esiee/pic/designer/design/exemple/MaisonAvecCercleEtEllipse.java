@@ -169,7 +169,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 		.ajouter(toitBaseGauche)
 		.ajouter(toitBaseDroit)
 		.ajouter(toitHaut)
-		.couleurDesTrait(Couleur.ROUGE);
+		.couleurDesTrait(Couleur.BLEUE);
 		
 		// Constuction de la porte
 		double ecartBaseGaucheMaisonPorte = ((LONGUEUR_MAISON - LONGUEUR_PORTE) / 2);
@@ -197,7 +197,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 		double xSerrure = baseGauchePorte.getX() + ECART_X_BASE_GAUCHE_PORTE_SERRURE;
 		double ySerrure = baseGauchePorte.getY() - (LARGEUR_PORTE/2);
 		Point centreSerrure = new Point(xSerrure, ySerrure);
-		Ellipse serrure = new Ellipse(centreSerrure, DIAMETRE_SERRURE, DIAMETRE_SERRURE, Couleur.ROUGE);
+		Ellipse serrure = new Ellipse(centreSerrure, DIAMETRE_SERRURE, DIAMETRE_SERRURE, Couleur.BLEUE);
 		
 		// On ajout à la liste des composants à déssiner
 		ajouterEllipse(serrure);
