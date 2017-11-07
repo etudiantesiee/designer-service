@@ -30,13 +30,13 @@ public class Point {
     /**
      * Abscisse du point
      */
-    @Column(name="x", nullable=false, updatable=false)
+    @Column(name="x", nullable=false)
     private double x;
 
     /**
      * Ordonnée du point
      */
-    @Column(name="y", nullable=false, updatable=false)
+    @Column(name="y", nullable=false)
     private double y;
     
     /**
