@@ -29,7 +29,7 @@ public final class EcranPrincipal {
 	/**
 	 * Unité sur l'axe des ordonnées
 	 */
-	public static final int UNITE_VERTIACLE_GRILLE = 25;
+	public static final int UNITE_VERTICALE_GRILLE = 25;
 	
 	/**
 	 * Liste des dessin à afficher sur l'écran
@@ -66,7 +66,7 @@ public final class EcranPrincipal {
 		// Affichage de la grille
 		double longueurEcran = this.afficheur.getLongueurAffichage();
 		double largeurEcran = this.afficheur.getLargeurAffichage();
-		Grille grille = new Grille("Grille", longueurEcran, largeurEcran, UNITE_HORIZONTALE_GRILLE, UNITE_VERTIACLE_GRILLE);
+		Grille grille = new Grille("Grille", longueurEcran, largeurEcran, UNITE_HORIZONTALE_GRILLE, UNITE_VERTICALE_GRILLE);
 		listDeDessins.add(grille);
 	}
 	

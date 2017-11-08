@@ -4,6 +4,7 @@ import fr.esiee.pic.designer.domain.shapes.Couleur;
 import fr.esiee.pic.designer.domain.shapes.Ellipse;
 import fr.esiee.pic.designer.domain.shapes.Point;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
+import fr.esiee.pic.designer.ui.scene.EcranPrincipal;
 
 
 /**
@@ -13,6 +14,10 @@ import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
  *
  */
 public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
+	
+	private static final int UNITE_HORIZONTALE_GRILLE = EcranPrincipal.UNITE_HORIZONTALE_GRILLE;
+	
+	private static final int UNITE_VERTICALE_GRILLE = EcranPrincipal.UNITE_VERTICALE_GRILLE;
 	
     /**
      * Constructeur avec nom
@@ -25,17 +30,17 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
     /**
 	 * Point en bas à gauche de la maison
 	 */
-	private static final Point BASE_BAS_GAUCHE_MAISON = new Point(400, 750);
+	private static final Point BASE_BAS_GAUCHE_MAISON = new Point(15 * UNITE_HORIZONTALE_GRILLE, 24 * UNITE_VERTICALE_GRILLE);
 	
 	/**
 	 * Largeur de la maison
 	 */
-	private static final int LONGUEUR_MAISON = 400;
+	private static final int LONGUEUR_MAISON = UNITE_HORIZONTALE_GRILLE * 12;
 	
 	/**
 	 * Longueur de la maison
 	 */
-	private static final int LARGEUR_MAISON = 350;
+	private static final int LARGEUR_MAISON = UNITE_VERTICALE_GRILLE * 10;
 	
 	/**
 	 * Longueur de la base du toit
@@ -84,7 +89,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 	/**
 	 * Centre du cercle jaune
 	 */
-	private static final Point CENTRE_CERCLE_JAUNE = new Point(150, 200);
+	private static final Point CENTRE_CERCLE_JAUNE = new Point(5 * UNITE_HORIZONTALE_GRILLE, 5 * UNITE_VERTICALE_GRILLE);
 	
 	/**
 	 * Rayon du cercle jaune
@@ -95,7 +100,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 	/**
 	 * Centre de la forme ovale
 	 */
-	private static final Point CENTRE_FORME_OVALE = new Point(150, 600);
+	private static final Point CENTRE_FORME_OVALE = new Point(5 * UNITE_HORIZONTALE_GRILLE, 20 * UNITE_VERTICALE_GRILLE);
 	
 	/**
 	 * Longueur de la forme ovale

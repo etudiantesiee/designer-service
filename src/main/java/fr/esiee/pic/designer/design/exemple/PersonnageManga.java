@@ -4,6 +4,7 @@ import fr.esiee.pic.designer.domain.shapes.Couleur;
 import fr.esiee.pic.designer.domain.shapes.Ellipse;
 import fr.esiee.pic.designer.domain.shapes.Point;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
+import fr.esiee.pic.designer.ui.scene.EcranPrincipal;
 
 /**
  * Demo de création d'un personnage de manga
@@ -20,17 +21,17 @@ public class PersonnageManga extends CreateurDeForme {
     /**
 	 * Pas de dessin horizontale
 	 */
-	private static final double UNITE_HORIZONTALE = 50;
+	private static final double UNITE_HORIZONTALE = EcranPrincipal.UNITE_HORIZONTALE_GRILLE;
 	
 	/**
 	 * Pas de dessin verticale
 	 */
-	private static final double UNITE_VERTICALE = 50;
+	private static final double UNITE_VERTICALE = EcranPrincipal.UNITE_VERTICALE_GRILLE;
 	
 	/**
 	 * Point exterieure du pied gauche du manga
 	 */
-	private static final Point PIED_GAUCHE_EXTERIEURE_MANGA = new Point(1000, 750);
+	private static final Point PIED_GAUCHE_EXTERIEURE_MANGA = new Point(35 * UNITE_HORIZONTALE, 23 * UNITE_VERTICALE);
 	
 	/**
 	 * Longueure du trait unissantles deux pieds du manga
@@ -60,17 +61,17 @@ public class PersonnageManga extends CreateurDeForme {
 	/**
 	 * Longueur du nez
 	 */
-	private static final double LONGUEUR_NEZ = 25;
+	private static final double LONGUEUR_NEZ = UNITE_HORIZONTALE * (0.3);
 	
 	/**
 	 * Longueur du nez
 	 */
-	private static final double LARGEUR_NEZ = 12;
+	private static final double LARGEUR_NEZ = UNITE_VERTICALE * (0.3);
 	
 	/**
 	 * Longueur de la bouche
 	 */
-	private static final double LONGUEUR_BOUCHE = 100;
+	private static final double LONGUEUR_BOUCHE = UNITE_HORIZONTALE * 2;
 	
 	/**
 	 * Longueur du trait du menton
