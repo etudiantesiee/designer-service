@@ -98,7 +98,7 @@ public class PersonnageManga extends CreateurDeForme {
 		Point piedHautGauche1 = new Point(corpsBasGauche.getX() + UNITE_HORIZONTALE, corpsBasGauche.getY() + 2 * UNITE_VERTICALE);
 		Point piedHautGauche2 = new Point(piedHautGauche1.getX() - UNITE_HORIZONTALE, piedHautGauche1.getY()); 
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Pied")
 		.ajouter(piedBasGaucheManga)
 		.ajouter(piedBasDroitManga)
 		.ajouter(piedHautDroit1)
@@ -112,7 +112,7 @@ public class PersonnageManga extends CreateurDeForme {
 		Point limitePiedBas = new Point(piedBasDroitManga.getX() - LONGUEUR_BAS_PIED_MANGA/2, piedBasDroitManga.getY());
 		Point limitePiedHaut = new Point(limitePiedBas.getX(), limitePiedBas.getY() - 2 * UNITE_VERTICALE);
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Limite pieds")
 		.ajouter(limitePiedBas)
 		.ajouter(limitePiedHaut);
 		
@@ -151,7 +151,7 @@ public class PersonnageManga extends CreateurDeForme {
 		Point mentonGauche = new Point(mentonDroit.getX() - 2 * UNITE_HORIZONTALE, mentonDroit.getY());
 		
 		// Liaison des points formant le menton et le corps du manga
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Laison menton et corps")
 		.ajouter(corpsBasDroit)
 		.ajouter(corpsCoteHautDroit)
 		.ajouter(brasDroit1)
@@ -192,7 +192,7 @@ public class PersonnageManga extends CreateurDeForme {
 		Point mainDroite1 = new Point(brasDroit2.getX(), brasDroit2.getY() + UNITE_VERTICALE);
 		Point mainDroite2 = new Point(mainDroite1.getX() + UNITE_HORIZONTALE, mainDroite1.getY());
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Main droite")
 		.ajouter(brasDroit2)
 		.ajouter(mainDroite1)
 		.ajouter(mainDroite2)
@@ -203,7 +203,7 @@ public class PersonnageManga extends CreateurDeForme {
 		Point mainGauche1 = new Point(brasGauche3.getX(), brasGauche3.getY() + UNITE_VERTICALE);
 		Point mainGauche2 = new Point(mainGauche1.getX() + UNITE_HORIZONTALE, mainGauche1.getY());
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Main gauche")
 		.ajouter(brasGauche3)
 		.ajouter(mainGauche1)
 		.ajouter(mainGauche2)
@@ -218,7 +218,7 @@ public class PersonnageManga extends CreateurDeForme {
 			Point separateurDoigtDRoitHaut = new Point(separateurDoigtDroitBas.getX(), separateurDoigtDroitBas.getY() - LARGEUR_DOIGT);
 			
 			// Dessin du doigt courant droit
-			demarrerNouveauDessinAvecDesPoints()
+			demarrerNouveauDessinAvecDesPoints("Doigt droit " + (i+1))
 			.ajouter(separateurDoigtDroitBas)
 			.ajouter(separateurDoigtDRoitHaut);
 			
@@ -226,8 +226,8 @@ public class PersonnageManga extends CreateurDeForme {
 			Point separateurDoigtGaucheBas = new Point(mainGauche1.getX() + (longueurDoigt * i), mainGauche1.getY());
 			Point separateurDoigtGaucheHaut = new Point(separateurDoigtGaucheBas.getX(), separateurDoigtGaucheBas.getY() - LARGEUR_DOIGT);
 			
-			// Dessin du doigt courant droit
-			demarrerNouveauDessinAvecDesPoints()
+			// Dessin du doigt courant gauche
+			demarrerNouveauDessinAvecDesPoints("Doigt gauche " + (i+1))
 			.ajouter(separateurDoigtGaucheBas)
 			.ajouter(separateurDoigtGaucheHaut);
 		}
@@ -245,12 +245,12 @@ public class PersonnageManga extends CreateurDeForme {
 		Point coteTeteDroit = new Point(epauleDroit2.getX() + UNITE_HORIZONTALE, epauleDroit2.getY() - 2 * UNITE_VERTICALE);
 		Point coteTeteGauche = new Point(epauleGauche2.getX() - UNITE_HORIZONTALE, epauleGauche2.getY() - 2 * UNITE_VERTICALE);
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Liaison epaule tête droit")
 		.ajouter(epauleDroit2)
 		.ajouter(coteTeteDroit);
 		
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Liaison epaule tête gauche")
 		.ajouter(epauleGauche2)
 		.ajouter(coteTeteGauche);
 		
@@ -267,7 +267,7 @@ public class PersonnageManga extends CreateurDeForme {
 		Point chev10 = new Point(chev9.getX() + 4 * UNITE_HORIZONTALE, chev9.getY());
 		Point chev11 = new Point(chev10.getX() + 2 * UNITE_HORIZONTALE, chev10.getY() + 2 * UNITE_VERTICALE);
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Tête cheveux")
 		.ajouter(coteTeteDroit)
 		.ajouter(chev1)
 		.ajouter(chev2)
@@ -297,7 +297,7 @@ public class PersonnageManga extends CreateurDeForme {
 		double abscisseOeilDroit = epauleDroit2.getX() - 2 * UNITE_HORIZONTALE;
 		double ordonneOeilDroit = epauleDroit2.getY() - 3 * UNITE_VERTICALE;
 		Point centreOeilDroit = new Point(abscisseOeilDroit, ordonneOeilDroit);
-		Ellipse oeilDroit = new Ellipse(centreOeilDroit, LONGUEUR_DES_YEUX, LARGEUR_DES_YEUX, Couleur.NOIR);
+		Ellipse oeilDroit = new Ellipse("Oeil droit", centreOeilDroit, LONGUEUR_DES_YEUX, LARGEUR_DES_YEUX, Couleur.NOIR);
 		
 		ajouterEllipse(oeilDroit);
 		
@@ -305,7 +305,7 @@ public class PersonnageManga extends CreateurDeForme {
 		double abscisseOeilGauche = epauleGauche2.getX() + 2 * UNITE_HORIZONTALE;
 		double ordonneOeilGauche = epauleGauche2.getY() - 3 * UNITE_VERTICALE;
 		Point centreOeilGauche = new Point(abscisseOeilGauche, ordonneOeilGauche);
-		Ellipse oeilGauche = new Ellipse(centreOeilGauche, LONGUEUR_DES_YEUX, LARGEUR_DES_YEUX, Couleur.NOIR);
+		Ellipse oeilGauche = new Ellipse("Oeil gauche", centreOeilGauche, LONGUEUR_DES_YEUX, LARGEUR_DES_YEUX, Couleur.NOIR);
 		
 		ajouterEllipse(oeilGauche);
 		
@@ -314,7 +314,7 @@ public class PersonnageManga extends CreateurDeForme {
 		Point sommetDroitNez = new Point(sommetHautDuNez.getX() + LONGUEUR_NEZ/2, sommetHautDuNez.getY() + LARGEUR_NEZ);
 		Point sommetGaucheNez = new Point(sommetDroitNez.getX() - LONGUEUR_NEZ, sommetDroitNez.getY());
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Nez")
 		.ajouter(sommetGaucheNez)
 		.ajouter(sommetHautDuNez)
 		.ajouter(sommetDroitNez)
@@ -324,7 +324,7 @@ public class PersonnageManga extends CreateurDeForme {
 		Point boucheDroit = new Point(sommetHautDuNez.getX() + UNITE_HORIZONTALE, sommetHautDuNez.getY() + UNITE_VERTICALE);
 		Point boucheGauche = new Point(boucheDroit.getX() - LONGUEUR_BOUCHE, boucheDroit.getY());
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Bouche")
 		.ajouter(boucheDroit)
 		.ajouter(boucheGauche);
 		
@@ -332,7 +332,7 @@ public class PersonnageManga extends CreateurDeForme {
 		Point traitMentonDroit = new Point(sommetHautDuNez.getX() + LONGUEUR_TRAIT_MENTON/2, sommetHautDuNez.getY() + 3 * UNITE_VERTICALE);
 		Point traitMentonGauche = new Point(traitMentonDroit.getX() - LONGUEUR_TRAIT_MENTON, traitMentonDroit.getY());
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Menton")
 		.ajouter(traitMentonDroit)
 		.ajouter(traitMentonGauche);
 	}

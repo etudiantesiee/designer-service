@@ -130,7 +130,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 	private void dessinerCercleJaune() {
 
 		// Pour un clercle la largeur et la hauteur de l'ellipse sont égales.
-		Ellipse cercleJaune = new Ellipse(CENTRE_CERCLE_JAUNE, DIAMETRE_DU_CERCLE_JAUNE, DIAMETRE_DU_CERCLE_JAUNE, Couleur.JAUNE);
+		Ellipse cercleJaune = new Ellipse("Cercle jaune", CENTRE_CERCLE_JAUNE, DIAMETRE_DU_CERCLE_JAUNE, DIAMETRE_DU_CERCLE_JAUNE, Couleur.JAUNE);
 		
 		// On ajout à la liste des composants à déssiner
 		ajouterEllipse(cercleJaune);
@@ -141,7 +141,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 	 */
 	private void dessinerFormeOvale() {
 		// Pour une forme ovale, la longueur doit différer de la largeur
-		Ellipse formeOvale = new Ellipse(CENTRE_FORME_OVALE, LONGUEUR_FORME_OVALE, LARGEUR_FORME_OVALE, Couleur.BLANC);
+		Ellipse formeOvale = new Ellipse("Forme ovale", CENTRE_FORME_OVALE, LONGUEUR_FORME_OVALE, LARGEUR_FORME_OVALE, Couleur.BLANC);
 		
 		// On ajoute à la liste des composants à déssiner
 		ajouterEllipse(formeOvale);
@@ -157,7 +157,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 		Point baseHautDroit = new Point(baseBasDroit.getX(), baseBasDroit.getY() - LARGEUR_MAISON);
 		Point baseHautGauche = new Point(baseBasGauche.getX(), baseBasDroit.getY() - LARGEUR_MAISON);
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Base")
 		.ajouter(baseBasGauche)
 		.ajouter(baseBasDroit)
 		.ajouter(baseHautDroit)
@@ -170,7 +170,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 		Point toitBaseDroit = new Point(baseHautDroit.getX() + ecartLongueurToitMaison, baseHautDroit.getY());
 		Point toitHaut = new Point(toitBaseGauche.getX() + ECART_X_TOIT_MAISON_POINT_HAUT_BASE_GAUCHE, toitBaseGauche.getY() - HAUTEUR_BASE_TOIT);
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Toit")
 		.ajouter(toitBaseGauche)
 		.ajouter(toitBaseDroit)
 		.ajouter(toitHaut)
@@ -183,7 +183,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 		Point hautDroitPorte = new Point(baseDroitePorte.getX(), baseDroitePorte.getY() - LARGEUR_PORTE);
 		Point hautGauchePorte = new Point(baseGauchePorte.getX(), baseGauchePorte.getY() - LARGEUR_PORTE);
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Porte")
 		.ajouter(baseGauchePorte)
 		.ajouter(baseDroitePorte)
 		.ajouter(hautDroitPorte)
@@ -193,7 +193,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 		double ecartBaseGaucheToitPoitHautToit = LONGUEUR_PORTE / 2;
 		Point hautToitPorte = new Point(hautGauchePorte.getX() + ecartBaseGaucheToitPoitHautToit, hautGauchePorte.getY() - HAUTEUR_TOIT_PORTE);
 		
-		demarrerNouveauDessinAvecDesPoints()
+		demarrerNouveauDessinAvecDesPoints("Toit porte")
 		.ajouter(hautGauchePorte)
 		.ajouter(hautDroitPorte)
 		.ajouter(hautToitPorte);
@@ -202,7 +202,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 		double xSerrure = baseGauchePorte.getX() + ECART_X_BASE_GAUCHE_PORTE_SERRURE;
 		double ySerrure = baseGauchePorte.getY() - (LARGEUR_PORTE/2);
 		Point centreSerrure = new Point(xSerrure, ySerrure);
-		Ellipse serrure = new Ellipse(centreSerrure, DIAMETRE_SERRURE, DIAMETRE_SERRURE, Couleur.BLEUE);
+		Ellipse serrure = new Ellipse("serrure", centreSerrure, DIAMETRE_SERRURE, DIAMETRE_SERRURE, Couleur.BLEUE);
 		
 		// On ajout à la liste des composants à déssiner
 		ajouterEllipse(serrure);

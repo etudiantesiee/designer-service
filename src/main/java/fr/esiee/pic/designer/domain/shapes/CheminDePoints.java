@@ -37,6 +37,12 @@ public final class CheminDePoints {
     @GenericGenerator(name="system-uuid", strategy = "uuid2")
     @Column(length=36)
     private String id;
+    
+    /**
+     * Nom du chemin de points
+     */
+    @Column(name="nom", nullable=false)
+    private String nom;
 	
 	/**
 	 * List de points ordonnés
@@ -79,11 +85,20 @@ public final class CheminDePoints {
 	/**
 	 * Constructeur par défaut
 	 */
-	public CheminDePoints() {
+	public CheminDePoints(String nom) {
+	    super();
+	    this.nom = nom;
 		points = new LinkedList<>();
 		traitDeLaisonFin = false;
 		relierLesPointsExtremes = true;
 	}
+    
+    /**
+     * Constructeur par défaut
+     */
+    public CheminDePoints() {
+        this(null);
+    }
 	
 	/**
 	 * Ajout d'un nouveau point à relier au précédent.

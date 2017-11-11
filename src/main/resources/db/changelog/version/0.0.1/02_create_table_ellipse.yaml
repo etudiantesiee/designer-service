@@ -12,6 +12,11 @@ databaseChangeLog:
             type: char(36)     
         - column:
             constraints:
+              nullable: true
+            name: nom
+            type: VARCHAR(50) 
+        - column:
+            constraints:
               nullable: false
             name: centre
             type: char(36) 

@@ -37,6 +37,12 @@ public class Ellipse {
     @GenericGenerator(name="system-uuid", strategy = "uuid2")
     @Column(length=36)
     private String id;
+    
+    /**
+     * Nom de l'élément graphique
+     */
+    @Column(name="nom", nullable=false)
+    private String nom;
 	
     /**
      * Centre de l'ellipse
@@ -84,13 +90,25 @@ public class Ellipse {
 	 * @param l
 	 * @param h
 	 */
-	public Ellipse(Point centre, double l, double h) {
-		super();
-		this.centre = centre;
-		this.l = l;
-		this.h = h;
-		this.couleur = null;
+	public Ellipse(String nom, Point centre, double l, double h) {
+        this(nom, centre, l, h, null);
 	}
+
+    /**
+     * Construit une éllipse à partir de :
+     *  - des corrdonnées de son centre : le point centreEllipse
+     * Si la h = l
+     *  - l'éllipse devient un cercle.
+     *  - l devient le diametre
+     *  - h : devient le diametre
+     * 
+     * @param centreEllipse
+     * @param l
+     * @param h
+     */
+    public Ellipse(Point centre, double l, double h) {
+        this(null, centre, l, h);
+    }
 	
 	/**
      * Construit une éllipse à partir de :
@@ -105,12 +123,30 @@ public class Ellipse {
      * @param l
      * @param h
      */
-    public Ellipse(Point centre, double l, double h, Couleur couleur) {
+    public Ellipse(String nom, Point centre, double l, double h, Couleur couleur) {
         super();
+        this.nom = nom;
         this.centre = centre;
         this.l = l;
         this.h = h;
         this.couleur = couleur;
+    }
+    
+    /**
+     * Construit une éllipse à partir de :
+     *  - des corrdonnées de son centre : le point centreEllipse
+     * Si la h = l
+     *  - l'éllipse devient un cercle.
+     *  - l devient le diametre
+     *  - h : devient le diametre
+     *  - couleur : la couleur de l'ellipse
+     * 
+     * @param centreEllipse
+     * @param l
+     * @param h
+     */
+    public Ellipse(Point centre, double l, double h, Couleur couleur) {
+        this(null, centre, l, h, couleur);
     }
     
     /**

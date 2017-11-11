@@ -13,6 +13,11 @@ databaseChangeLog:
         - column:
             constraints:
               nullable: true
+            name: nom
+            type: VARCHAR(50) 
+        - column:
+            constraints:
+              nullable: true
             name: couleur
             type: char(36) 
         - column:

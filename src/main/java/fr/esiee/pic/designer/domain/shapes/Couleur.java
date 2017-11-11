@@ -21,32 +21,32 @@ public class Couleur {
 	/**
 	 * Couleur noir
 	 */
-    public static final Couleur NOIR = new Couleur(0f, 0f, 0f, 0.8f);
+    public static final Couleur NOIR = new Couleur("noir", 0f, 0f, 0f, 0.8f);
 	
 	/**
 	 * Couleur Blanche
 	 */
-    public static final Couleur BLANC = new Couleur(1f, 1f, 1f, 0.8f);
+    public static final Couleur BLANC = new Couleur("blanc", 1f, 1f, 1f, 0.8f);
 	
 	/**
 	 * Couleur Grise
 	 */
-    public static final Couleur GRIS = new Couleur(0.5f, 0.5f, 0.5f, 0.8f);
+    public static final Couleur GRIS = new Couleur("gris", 0.5f, 0.5f, 0.5f, 0.8f);
 
 	/**
 	 * Couleur Jaune
 	 */
-    public static final Couleur JAUNE = new Couleur(1f, 1f, 0f, 0.8f);
+    public static final Couleur JAUNE = new Couleur("jaune", 1f, 1f, 0f, 0.8f);
 
     /**
      * Couleur Jaune
      */
-    public static final Couleur ROUGE = new Couleur(1f, 0f, 0f, 0.8f);
+    public static final Couleur ROUGE = new Couleur("rouge", 1f, 0f, 0f, 0.8f);
     
     /**
      * Couleur Jaune
      */
-    public static final Couleur BLEUE = new Couleur(0f, 0f, 1f, 0.8f);
+    public static final Couleur BLEUE = new Couleur("blue", 0f, 0f, 1f, 0.8f);
     
 	
 	@Id
@@ -54,6 +54,12 @@ public class Couleur {
     @GenericGenerator(name="system-uuid", strategy = "uuid2")
     @Column(length=36)
     private String id;
+    
+    /**
+     * Nom de l'élément graphique
+     */
+    @Column(name="nom", nullable=false)
+    private String nom;
 	
 	private float r, g, b, a;
 	
@@ -67,8 +73,8 @@ public class Couleur {
 	/**
 	 * Construct a color from another color
 	 */
-	public Couleur(Couleur c) {
-        this(c.r, c.g, c.b, c.a);
+	public Couleur(String nom, Couleur c) {
+        this(nom, c.r, c.g, c.b, c.a);
         
     }
 	
@@ -83,7 +89,8 @@ public class Couleur {
 	 * @param b
 	 * @param a
 	 */
-	private Couleur(float r, float g, float b, float a) {
+	private Couleur(String nom, float r, float g, float b, float a) {
+	    this.nom = nom;
 		this.r = r;
 		this.g = g;
 		this.b = b;

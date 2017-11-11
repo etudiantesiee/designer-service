@@ -35,15 +35,25 @@ public abstract class CreateurDeForme {
 	
 	/**
 	 * Initialise une nouvelle phase de création d'un dessin à partir de points.
+	 * On peut attribuer un nom au dessin.
 	 * 
 	 * @return
 	 */
-	protected CheminDePoints demarrerNouveauDessinAvecDesPoints() {
-		CheminDePoints nouveauChemin = new CheminDePoints();
+	protected CheminDePoints demarrerNouveauDessinAvecDesPoints(String nom) {
+		CheminDePoints nouveauChemin = new CheminDePoints(nom);
 		this.elementGraphique.ajoutNouveauChemin(nouveauChemin);
 		
 		return nouveauChemin;
 	}
+    
+    /**
+     * Initialise une nouvelle phase de création d'un dessin à partir de points.
+     * 
+     * @return
+     */
+    protected CheminDePoints demarrerNouveauDessinAvecDesPoints() {
+        return demarrerNouveauDessinAvecDesPoints(null);
+    }
 	
 	/**
 	 * Ajoute une nouvelle ellipse à la figure en cours de construction.
