@@ -173,6 +173,48 @@ public final class CheminDePoints {
     }
 
     /**
+     * @return the nom
+     */
+    public String getNom() {
+        return nom;
+    }
+
+    /**
+     * @param nom the nom to set
+     */
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * @param points the points to set
+     */
+    public void setPoints(List<Point> points) {
+        this.points = points;
+    }
+
+    /**
+     * @param traitDeLaisonFin the traitDeLaisonFin to set
+     */
+    public void setTraitDeLaisonFin(Boolean traitDeLaisonFin) {
+        this.traitDeLaisonFin = traitDeLaisonFin;
+    }
+
+    /**
+     * @param relierLesPointsExtremes the relierLesPointsExtremes to set
+     */
+    public void setRelierLesPointsExtremes(boolean relierLesPointsExtremes) {
+        this.relierLesPointsExtremes = relierLesPointsExtremes;
+    }
+
+    /**
      * @return the points
      */
     public List<Point> getPoints() {
