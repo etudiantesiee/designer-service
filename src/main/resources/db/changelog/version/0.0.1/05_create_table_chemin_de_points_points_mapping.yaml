@@ -14,7 +14,12 @@ databaseChangeLog:
             constraints:
               nullable: false
             name: point_id
-            type: CHAR(36)
+            type: CHAR(36)  
+        - column:
+            constraints:
+              nullable: true
+            name: points_order
+            type: INT
         tableName: chemin_de_points_point_mapping
 - changeSet:
     id: 2

@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OrderColumn;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -54,6 +55,7 @@ public final class CheminDePoints {
         inverseJoinColumns=@JoinColumn(name="point_id", referencedColumnName="id", nullable = false),
         uniqueConstraints = @UniqueConstraint(columnNames = {"chemin_de_point_id", "point_id"}))
     @Fetch(value = FetchMode.SUBSELECT)
+    @OrderColumn
 	private List<Point> points;
 	
 	/**
