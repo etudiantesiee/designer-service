@@ -25,11 +25,6 @@ public final class ExecutionEngine {
 	private static final long serialVersionUID = 2759668095433251868L;
 
 	/**
-	 * Unique instance du moteur d'exécution
-	 */
-	private static ExecutionEngine instance;
-
-	/**
 	 * Frame à afficher
 	 */
 	private MainFrameComponent engineFrame;
@@ -37,23 +32,10 @@ public final class ExecutionEngine {
 	/**
 	 * Constructeur privé du singleton
 	 */
-	private ExecutionEngine() {
+	public ExecutionEngine() {
 		super();
 		engineFrame = new MainFrameComponent();
 		initUI();
-	}
-
-	/**
-	 * Retourne l'unique instance du moteur d'exécution
-	 * 
-	 * @return
-	 */
-	public static ExecutionEngine getInstance() {
-		if (instance == null) {
-			instance = new ExecutionEngine();
-		}
-
-		return instance;
 	}
 
 	/**

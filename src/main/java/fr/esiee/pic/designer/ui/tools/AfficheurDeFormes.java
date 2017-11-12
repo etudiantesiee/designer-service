@@ -36,11 +36,6 @@ public final class AfficheurDeFormes {
 	private ExecutionEngine engine;
 	
 	/**
-	 * unique instance de la classe
-	 */
-	private static AfficheurDeFormes instance;
-	
-	/**
 	 * Longueur de l'affichage 
 	 */
 	private final double longueurAffichage;
@@ -53,29 +48,16 @@ public final class AfficheurDeFormes {
 	/**
 	 * Construteur par défaut caché
 	 */
-	private AfficheurDeFormes() {
+	public AfficheurDeFormes() {
 		super();
 		shapesFactory = ShapesFactoryImpl.getInstance();
-		engine = ExecutionEngine.getInstance();
+		engine = new ExecutionEngine();
 		engine.afficher();
 		
 		// Dimension de l'écran
 		Dimension dimEcran = engine.getSize();
 		this.longueurAffichage = dimEcran.getWidth();
 		this.largeurAffichage = dimEcran.getHeight();
-	}
-	
-	/**
-	 * Retourne l'unique instance
-	 * 
-	 * @return
-	 */
-	public static AfficheurDeFormes getInstance() {
-		if (instance == null) {
-			instance = new AfficheurDeFormes();
-		}
-		
-		return instance;
 	}
 	
 	/**

@@ -4,7 +4,7 @@ import fr.esiee.pic.designer.domain.shapes.Couleur;
 import fr.esiee.pic.designer.domain.shapes.Ellipse;
 import fr.esiee.pic.designer.domain.shapes.Point;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
-import fr.esiee.pic.designer.ui.scene.EcranPrincipal;
+import fr.esiee.pic.designer.ui.scene.demo.EcranManga;
 
 /**
  * Demo de création d'un personnage de manga
@@ -21,17 +21,17 @@ public class PersonnageManga extends CreateurDeForme {
     /**
 	 * Pas de dessin horizontale
 	 */
-	private static final double UNITE_HORIZONTALE = EcranPrincipal.UNITE_HORIZONTALE_GRILLE;
+	private static final double UNITE_HORIZONTALE = EcranManga.UNITE_HORIZONTALE_GRILLE;
 	
 	/**
 	 * Pas de dessin verticale
 	 */
-	private static final double UNITE_VERTICALE = EcranPrincipal.UNITE_VERTICALE_GRILLE;
+	private static final double UNITE_VERTICALE = EcranManga.UNITE_VERTICALE_GRILLE;
 	
 	/**
 	 * Point exterieure du pied gauche du manga
 	 */
-	private static final Point PIED_GAUCHE_EXTERIEURE_MANGA = new Point(40 * UNITE_HORIZONTALE, 23 * UNITE_VERTICALE);
+	private static final Point PIED_GAUCHE_EXTERIEURE_MANGA = new Point(7 * UNITE_HORIZONTALE, 14 * UNITE_VERTICALE);
 	
 	/**
 	 * Longueure du trait unissantles deux pieds du manga

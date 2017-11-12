@@ -4,7 +4,7 @@ import fr.esiee.pic.designer.domain.shapes.Couleur;
 import fr.esiee.pic.designer.domain.shapes.Ellipse;
 import fr.esiee.pic.designer.domain.shapes.Point;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
-import fr.esiee.pic.designer.ui.scene.EcranPrincipal;
+import fr.esiee.pic.designer.ui.scene.demo.EcranMaison;
 
 
 /**
@@ -15,9 +15,9 @@ import fr.esiee.pic.designer.ui.scene.EcranPrincipal;
  */
 public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 	
-	private static final int UNITE_HORIZONTALE_GRILLE = EcranPrincipal.UNITE_HORIZONTALE_GRILLE;
+	private static final int UNITE_HORIZONTALE_GRILLE = EcranMaison.UNITE_HORIZONTALE_GRILLE;
 	
-	private static final int UNITE_VERTICALE_GRILLE = EcranPrincipal.UNITE_VERTICALE_GRILLE;
+	private static final int UNITE_VERTICALE_GRILLE = EcranMaison.UNITE_VERTICALE_GRILLE;
 	
     /**
      * Constructeur avec nom
@@ -30,12 +30,12 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
     /**
 	 * Point en bas à gauche de la maison
 	 */
-	private static final Point BASE_BAS_GAUCHE_MAISON = new Point(15 * UNITE_HORIZONTALE_GRILLE, 24 * UNITE_VERTICALE_GRILLE);
+	private static final Point BASE_BAS_GAUCHE_MAISON = new Point(15 * UNITE_HORIZONTALE_GRILLE, 20 * UNITE_VERTICALE_GRILLE);
 	
 	/**
 	 * Largeur de la maison
 	 */
-	private static final int LONGUEUR_MAISON = UNITE_HORIZONTALE_GRILLE * 12;
+	private static final int LONGUEUR_MAISON = UNITE_HORIZONTALE_GRILLE * 15;
 	
 	/**
 	 * Longueur de la maison
@@ -94,23 +94,23 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 	/**
 	 * Rayon du cercle jaune
 	 */
-	private static final double DIAMETRE_DU_CERCLE_JAUNE = 200; 
+	private static final double DIAMETRE_DU_CERCLE_JAUNE = 400; 
 	
 	
 	/**
 	 * Centre de la forme ovale
 	 */
-	private static final Point CENTRE_FORME_OVALE = new Point(5 * UNITE_HORIZONTALE_GRILLE, 20 * UNITE_VERTICALE_GRILLE);
+	private static final Point CENTRE_FORME_OVALE = new Point(37 * UNITE_HORIZONTALE_GRILLE, 20 * UNITE_VERTICALE_GRILLE);
 	
 	/**
 	 * Longueur de la forme ovale
 	 */
-	private static final double LONGUEUR_FORME_OVALE = 200;
+	private static final double LONGUEUR_FORME_OVALE = 300;
 	
 	/**
 	 * Largeur de la forme ovale
 	 */
-	private static final double LARGEUR_FORME_OVALE = 300;
+	private static final double LARGEUR_FORME_OVALE = 400;
 	
 	@Override
 	public void dessiner() {
@@ -130,7 +130,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 	private void dessinerCercleJaune() {
 
 		// Pour un clercle la largeur et la hauteur de l'ellipse sont égales.
-		Ellipse cercleJaune = new Ellipse("Cercle jaune", CENTRE_CERCLE_JAUNE, DIAMETRE_DU_CERCLE_JAUNE, DIAMETRE_DU_CERCLE_JAUNE, Couleur.JAUNE);
+		Ellipse cercleJaune = new Ellipse("Cercle jaune", CENTRE_CERCLE_JAUNE, DIAMETRE_DU_CERCLE_JAUNE, DIAMETRE_DU_CERCLE_JAUNE, Couleur.BLEUE);
 		
 		// On ajout à la liste des composants à déssiner
 		ajouterEllipse(cercleJaune);
@@ -141,7 +141,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 	 */
 	private void dessinerFormeOvale() {
 		// Pour une forme ovale, la longueur doit différer de la largeur
-		Ellipse formeOvale = new Ellipse("Forme ovale", CENTRE_FORME_OVALE, LONGUEUR_FORME_OVALE, LARGEUR_FORME_OVALE, Couleur.BLANC);
+		Ellipse formeOvale = new Ellipse("Forme ovale", CENTRE_FORME_OVALE, LONGUEUR_FORME_OVALE, LARGEUR_FORME_OVALE, Couleur.JAUNE);
 		
 		// On ajoute à la liste des composants à déssiner
 		ajouterEllipse(formeOvale);
@@ -161,7 +161,8 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 		.ajouter(baseBasGauche)
 		.ajouter(baseBasDroit)
 		.ajouter(baseHautDroit)
-		.ajouter(baseHautGauche);
+		.ajouter(baseHautGauche)
+        .couleurDesTrait(Couleur.VERT);
 		
 		// Construction du toit
 		// Les points du toit sont construit à partir des points du haut de la base de la maison
@@ -174,7 +175,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 		.ajouter(toitBaseGauche)
 		.ajouter(toitBaseDroit)
 		.ajouter(toitHaut)
-		.couleurDesTrait(Couleur.BLEUE);
+		.couleurDesTrait(Couleur.VERT);
 		
 		// Constuction de la porte
 		double ecartBaseGaucheMaisonPorte = ((LONGUEUR_MAISON - LONGUEUR_PORTE) / 2);
@@ -187,7 +188,8 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 		.ajouter(baseGauchePorte)
 		.ajouter(baseDroitePorte)
 		.ajouter(hautDroitPorte)
-		.ajouter(hautGauchePorte);
+		.ajouter(hautGauchePorte)
+        .couleurDesTrait(Couleur.VERT);
 		
 		// Construction du toit de la porte
 		double ecartBaseGaucheToitPoitHautToit = LONGUEUR_PORTE / 2;
@@ -196,13 +198,14 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 		demarrerNouveauDessinAvecDesPoints("Toit porte")
 		.ajouter(hautGauchePorte)
 		.ajouter(hautDroitPorte)
-		.ajouter(hautToitPorte);
+		.ajouter(hautToitPorte)
+        .couleurDesTrait(Couleur.VERT);
 		
 		// Construction de la serrure
 		double xSerrure = baseGauchePorte.getX() + ECART_X_BASE_GAUCHE_PORTE_SERRURE;
 		double ySerrure = baseGauchePorte.getY() - (LARGEUR_PORTE/2);
 		Point centreSerrure = new Point(xSerrure, ySerrure);
-		Ellipse serrure = new Ellipse("serrure", centreSerrure, DIAMETRE_SERRURE, DIAMETRE_SERRURE, Couleur.BLEUE);
+		Ellipse serrure = new Ellipse("serrure", centreSerrure, DIAMETRE_SERRURE, DIAMETRE_SERRURE, Couleur.VERT);
 		
 		// On ajout à la liste des composants à déssiner
 		ajouterEllipse(serrure);
