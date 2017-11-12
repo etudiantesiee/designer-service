@@ -31,7 +31,7 @@ public class PersonnageManga extends CreateurDeForme {
 	/**
 	 * Point exterieure du pied gauche du manga
 	 */
-	private static final Point PIED_GAUCHE_EXTERIEURE_MANGA = new Point(35 * UNITE_HORIZONTALE, 23 * UNITE_VERTICALE);
+	private static final Point PIED_GAUCHE_EXTERIEURE_MANGA = new Point(40 * UNITE_HORIZONTALE, 23 * UNITE_VERTICALE);
 	
 	/**
 	 * Longueure du trait unissantles deux pieds du manga
@@ -247,12 +247,14 @@ public class PersonnageManga extends CreateurDeForme {
 		
 		demarrerNouveauDessinAvecDesPoints("Liaison epaule tête droit")
 		.ajouter(epauleDroit2)
-		.ajouter(coteTeteDroit);
+		.ajouter(coteTeteDroit)
+		.couleurDesTrait(Couleur.JAUNE);
 		
 		
 		demarrerNouveauDessinAvecDesPoints("Liaison epaule tête gauche")
 		.ajouter(epauleGauche2)
-		.ajouter(coteTeteGauche);
+		.ajouter(coteTeteGauche)
+        .couleurDesTrait(Couleur.BLEUE);
 		
 		// Dessin chevelure
 		Point chev1 = new Point(coteTeteDroit.getX() - UNITE_HORIZONTALE, coteTeteDroit.getY() - 2* UNITE_VERTICALE);
@@ -281,7 +283,8 @@ public class PersonnageManga extends CreateurDeForme {
 		.ajouter(chev9)
 		.ajouter(chev10)
 		.ajouter(chev11)
-		.couleurDeFond(Couleur.GRIS);
+		.couleurDeFond(Couleur.GRIS)
+		.couleurDesTrait(Couleur.ROUGE);
 		
 		// Suite du dessin
 		dessinOeilNezBoucheMenton(epauleDroit2, epauleGauche2);
