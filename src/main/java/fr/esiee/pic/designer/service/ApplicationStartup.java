@@ -40,23 +40,32 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
     
     @Value("${service.startup.shapes.deleteall}")
     private boolean deleteAllShapesAtStartup;
+    @Value("${service.startup.shapes.activate}")
+    private boolean activate;
     
     @Override
     public void onApplicationEvent(ApplicationReadyEvent arg0) {
-        
-        if(deleteAllShapesAtStartup) {
-            LOGGER.info("Tous les dessins seront supprimés avant l'ajout des nouveaux");
-            elementgraphiqueService.deleteAll();
+        if(activate){
+        	
+        	   if(deleteAllShapesAtStartup) {
+                   LOGGER.info("Tous les dessins seront supprimés avant l'ajout des nouveaux");
+                   elementgraphiqueService.deleteAll();
+               }
+               
+               LOGGER.info("Création des composants graphiques de l'application");
+               PersonnageManga manga = new PersonnageManga("MangaEsiee");
+               add(manga);
+               
+               MaisonAvecCercleEtEllipse maisonAvecCercleEtEllipse = new MaisonAvecCercleEtEllipse("maisonAvecCercleEtEllipse");
+               add(maisonAvecCercleEtEllipse);
+               
+               LOGGER.info("Les composants graphiques de l'application ont été crées");
+               activate = false ;
+        } else {
+        	LOGGER.info("non configuré pour initialiser des images");
+        	return;
         }
-        
-        LOGGER.info("Création des composants graphiques de l'application");
-        PersonnageManga manga = new PersonnageManga("MangaEsiee");
-        add(manga);
-        
-        MaisonAvecCercleEtEllipse maisonAvecCercleEtEllipse = new MaisonAvecCercleEtEllipse("maisonAvecCercleEtEllipse");
-        add(maisonAvecCercleEtEllipse);
-        
-        LOGGER.info("Les composants graphiques de l'application ont été crées");
+     
     }
     
     /**
