@@ -49,13 +49,13 @@ public final class CheminDePoints {
 	 * List de points ordonnés
 	 */
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OrderColumn
     @JoinTable(
         name="chemin_de_points_point_mapping",
         joinColumns=@JoinColumn(name="chemin_de_point_id", referencedColumnName="id", nullable = false),
         inverseJoinColumns=@JoinColumn(name="point_id", referencedColumnName="id", nullable = false),
         uniqueConstraints = @UniqueConstraint(columnNames = {"chemin_de_point_id", "point_id"}))
     @Fetch(value = FetchMode.SUBSELECT)
-    @OrderColumn
 	private List<Point> points;
 	
 	/**

@@ -31,8 +31,8 @@ public class ElementGraphique {
     
     @Id
     @GeneratedValue(generator="system-uuid")
-    @GenericGenerator(name="system-uuid", strategy = "uuid2")
     @Column(length=36)
+    @GenericGenerator(name="system-uuid", strategy = "uuid2")
     private String id;
     
     /**
