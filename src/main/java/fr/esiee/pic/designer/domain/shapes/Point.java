@@ -86,7 +86,8 @@ public class Point {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        long temp1, temp2;
+        long temp1;
+        long temp2;
         temp1 = Double.doubleToLongBits(x);
         result = prime * result + (int) (temp1 ^ (temp1 >>> 32));
         temp2 = Double.doubleToLongBits(y);
@@ -106,11 +107,9 @@ public class Point {
         if (getClass() != obj.getClass())
             return false;
         Point other = (Point) obj;
-        if (Double.doubleToLongBits(x) != Double.doubleToLongBits(other.x))
-            return false;
-        if (Double.doubleToLongBits(y) != Double.doubleToLongBits(other.y))
-            return false;
-        return true;
+        
+        return Double.doubleToLongBits(x) == Double.doubleToLongBits(other.x) 
+        		&& Double.doubleToLongBits(y) == Double.doubleToLongBits(other.y);
     }
 
     /**

@@ -66,7 +66,25 @@ public class Couleur {
     @Column(name="nom", nullable=false)
     private String nom;
 	
-	private float r, g, b, a;
+    /**
+     * Red in RGBA
+     */
+	private float r;
+	
+	/**
+	 * Green in RGBA
+	 */
+	private float g;
+	
+	/**
+	 * Blue in RGBA
+	 */
+	private float b;
+	
+	/**
+	 * Alpha (transparency) in RGBA
+	 */
+	private float a;
 	
 	/**
 	 * Default constructor
@@ -221,15 +239,9 @@ public class Couleur {
         if (getClass() != obj.getClass())
             return false;
         Couleur other = (Couleur) obj;
-        if (Float.floatToIntBits(a) != Float.floatToIntBits(other.a))
-            return false;
-        if (Float.floatToIntBits(b) != Float.floatToIntBits(other.b))
-            return false;
-        if (Float.floatToIntBits(g) != Float.floatToIntBits(other.g))
-            return false;
-        if (Float.floatToIntBits(r) != Float.floatToIntBits(other.r))
-            return false;
-        return true;
+        
+        return Float.floatToIntBits(a) == Float.floatToIntBits(other.a) && Float.floatToIntBits(b) == Float.floatToIntBits(other.b) 
+        		&& Float.floatToIntBits(g) == Float.floatToIntBits(other.g) && Float.floatToIntBits(r) == Float.floatToIntBits(other.r);
     }
 
     /* (non-Javadoc)

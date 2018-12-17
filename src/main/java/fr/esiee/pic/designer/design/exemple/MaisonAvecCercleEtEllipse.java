@@ -62,7 +62,7 @@ public class MaisonAvecCercleEtEllipse extends CreateurDeForme {
 	/**
 	 * Longueur de la porte
 	 */
-	private static final int LONGUEUR_PORTE = (LONGUEUR_MAISON / 3);
+	private static final double LONGUEUR_PORTE = (LONGUEUR_MAISON / 3);
 	
 	/**
 	 * Largeur de la porte

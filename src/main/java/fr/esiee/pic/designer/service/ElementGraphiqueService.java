@@ -86,7 +86,7 @@ public class ElementGraphiqueService {
         
         List<Couleur> couleursIdentiques = couleurRepo.findAll(Example.of(couleur));
         
-        if(couleursIdentiques != null && couleursIdentiques.size() > 0) {
+        if(couleursIdentiques != null && !couleursIdentiques.isEmpty()) {
             // Couleur trouvé en base
             String couleurId = couleursIdentiques.get(0).getId(); 
             LOGGER.info("La couleur " + couleur + " existe déjà en base. "

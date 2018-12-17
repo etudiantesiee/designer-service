@@ -24,12 +24,12 @@ public final class EllipseAWT extends Component {
 	/**
 	 * Abscisse de l'ellipse
 	 */
-	private final float x;
+	private final float xEllipse;
 	
 	/**
 	 * Ordonnée de l'ellipse
 	 */
-	private final float y;
+	private final float yEllipse;
 	
 	/**
 	 * Largeur de l'ellipse
@@ -56,8 +56,8 @@ public final class EllipseAWT extends Component {
 	 * @param color
 	 */
 	public EllipseAWT(float x, float y, float w, float h, Color color) {
-		this.x = x;
-		this.y = y;
+		this.xEllipse = x;
+		this.yEllipse = y;
 		this.w = w;
 		this.h = h;
 		this.color = color;
@@ -66,6 +66,7 @@ public final class EllipseAWT extends Component {
 	/**
 	 * Paint method
 	 */
+	@Override
 	public void paint(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		
@@ -73,8 +74,8 @@ public final class EllipseAWT extends Component {
 		// Dans une ellipse AWT x et y correspondent 
 		// aux coordonnées du point supérieur gauche d'un rectangle (ou carré) 
 		// dans lequel l'éllipse est contenue 
-		double newX = this.x - this.w/2;
-		double newY = this.y - this.h/2;
+		double newX = this.xEllipse - this.w/2;
+		double newY = this.yEllipse - this.h/2;
 		
 		// Construction de l'ellipse
 		Ellipse2D ellipse = new Ellipse2D.Double(newX, newY, this.w, this.h);

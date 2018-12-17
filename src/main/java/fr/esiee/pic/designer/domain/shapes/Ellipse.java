@@ -231,11 +231,9 @@ public class Ellipse {
                 return false;
         } else if (!centre.equals(other.centre))
             return false;
-        if (Double.doubleToLongBits(h) != Double.doubleToLongBits(other.h))
-            return false;
-        if (Double.doubleToLongBits(l) != Double.doubleToLongBits(other.l))
-            return false;
-        return true;
+        
+        return Double.doubleToLongBits(h) == Double.doubleToLongBits(other.h)
+					&& Double.doubleToLongBits(l) == Double.doubleToLongBits(other.l);
     }
 
     /* (non-Javadoc)

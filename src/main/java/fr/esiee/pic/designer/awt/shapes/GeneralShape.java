@@ -26,7 +26,7 @@ public class GeneralShape extends Component {
 	/**
 	 * Liste de points utilisée pour la construction
 	 */
-	private final Point2D[] points;
+	private final transient Point2D[] points;
 
 	/**
 	 * Couleur de la forme géométrique
@@ -147,6 +147,7 @@ public class GeneralShape extends Component {
 	/**
 	 * Paint method
 	 */
+	@Override
 	public void paint(Graphics g) {
 		// Utilisation de la 2D
 		Graphics2D g2d = (Graphics2D) g;

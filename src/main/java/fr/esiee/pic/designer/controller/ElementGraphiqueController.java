@@ -64,10 +64,10 @@ public class ElementGraphiqueController {
         
         if (allElts == null) {
             LOGGER.info("Aucun élément graphique trouvé");
-            return new ResponseEntity<List<ElementGraphique>>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         
-        return new ResponseEntity<List<ElementGraphique>>(allElts, HttpStatus.OK);
+        return new ResponseEntity<>(allElts, HttpStatus.OK);
     }
     
     /**
@@ -88,7 +88,7 @@ public class ElementGraphiqueController {
         
         LOGGER.info("Element graphique crée avec succès. Id = " + createElt.getId());
         
-        return new ResponseEntity<ElementGraphique>(createElt, headers, HttpStatus.CREATED);
+        return new ResponseEntity<>(createElt, headers, HttpStatus.CREATED);
     }
     
     /**
@@ -106,7 +106,7 @@ public class ElementGraphiqueController {
         
         if (elementGraphique == null) {
             LOGGER.info("Element graphique avec id : $id inexistant pour une opération de mise à jour");
-            return new ResponseEntity<ElementGraphique>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
  
         elementGraphiqueBody.setId(id);
@@ -114,7 +114,7 @@ public class ElementGraphiqueController {
         
         LOGGER.info("Mise à jour effectuée avec succès. Id de l'élément graphqiue mis à jour : " + id);
         
-        return new ResponseEntity<ElementGraphique>(updatedElementGraphiqueBody, HttpStatus.OK);
+        return new ResponseEntity<>(updatedElementGraphiqueBody, HttpStatus.OK);
     }
     
     /**
@@ -130,11 +130,11 @@ public class ElementGraphiqueController {
         
         if (elementGraphique==null) {
             LOGGER.error("Element graphique avec id : " + id + " inexistant pour une opération de suppression");
-            return new ResponseEntity<ElementGraphique>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
  
         elementgraphiqueRepo.delete(elementGraphique);
         
-        return new ResponseEntity<ElementGraphique>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

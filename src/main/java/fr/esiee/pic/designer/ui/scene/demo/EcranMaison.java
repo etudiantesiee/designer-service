@@ -14,12 +14,12 @@ public class EcranMaison extends Ecran {
     /**
      * Unite sur l'axe des abscissed
      */
-    public static final int UNITE_HORIZONTALE_GRILLE = 50;
+    public static final int UNITE_HORIZONTALE_GRILLE = 25;
 
     /**
      * Unité sur l'axe des ordonnées
      */
-    public static final int UNITE_VERTICALE_GRILLE = 50;
+    public static final int UNITE_VERTICALE_GRILLE = 25;
     
     @Override
     public int uniteHorizontaleGrille() {
