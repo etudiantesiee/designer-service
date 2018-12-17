@@ -1,0 +1,38 @@
+# Root path
+server:
+  contextPath: /api
+  port: 8045
+
+# Prefix for all the Spring Actuator endpoints
+management:
+  context-path: /management
+
+# Service d'initialisation
+service:
+  startup:
+    shapes:
+      deleteall: false
+
+# Configuration JPA
+spring:
+  application:
+    name: designer-service
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: esieedesigner
+    hibernate:
+      ddl-auto: none # ddl-auto possible values : create, create-drop, update. set to none for production
+    naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/esieedesignerdb
+    username: esiee
+    password: esiee
+
+# Liquibase : le schema doit avoir été crée avant le lancement de l'application
+liquibase:
+  default-schema: esieedesigner
+  drop-first: false
