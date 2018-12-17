@@ -1,5 +1,6 @@
 package fr.esiee.pic.designer.ui.scene.demo;
 
+import fr.esiee.pic.designer.design.evaluation.DessinGroupe0;
 import fr.esiee.pic.designer.design.exemple.PersonnageManga;
 import fr.esiee.pic.designer.ui.scene.common.Ecran;
 
@@ -43,9 +44,9 @@ public class EcranManga extends Ecran {
         Ecran e = new EcranManga();
         e.masquerGrille();
         
-        // Affichage de la démo : personnage manga
-        PersonnageManga demoManga = new PersonnageManga("Un personnage manga");
-        e.addDessin(demoManga);
+        // Dessin intial à supprimer
+        DessinGroupe0 grp0 = new DessinGroupe0("Dessin groupe 0");
+        e.addDessin(grp0);
         
         e.afficher();
     }

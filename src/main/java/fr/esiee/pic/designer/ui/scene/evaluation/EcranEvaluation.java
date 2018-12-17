@@ -1,10 +1,9 @@
 package fr.esiee.pic.designer.ui.scene.evaluation;
 
-import fr.esiee.pic.designer.design.evaluation.DessinGroupeX;
+import fr.esiee.pic.designer.design.evaluation.DessinGroupe0;
 import fr.esiee.pic.designer.ui.scene.common.Ecran;
-import fr.esiee.pic.designer.ui.scene.demo.EcranManga;
 
-public class EcranGroupeX extends Ecran {
+public class EcranEvaluation extends Ecran {
     
     /**
      * Unite sur l'axe des abscissed
@@ -35,10 +34,10 @@ public class EcranGroupeX extends Ecran {
      */
     public static void main(String[] args) {
         
-        Ecran e = new EcranManga();
+        Ecran e = new EcranEvaluation();
         
         // Affichage de la démo : personnage manga
-        DessinGroupeX demoManga = new DessinGroupeX("Un personnage manga");
+        DessinGroupe0 demoManga = new DessinGroupe0("Un personnage manga");
         e.addDessin(demoManga);
         
         e.afficher();

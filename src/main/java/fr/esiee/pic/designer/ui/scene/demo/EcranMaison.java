@@ -14,22 +14,20 @@ public class EcranMaison extends Ecran {
     /**
      * Unite sur l'axe des abscissed
      */
-    public static final int UNITE_HORIZONTALE_GRILLE = 45;
+    public static final int UNITE_HORIZONTALE_GRILLE = 50;
 
     /**
      * Unité sur l'axe des ordonnées
      */
-    public static final int UNITE_VERTICALE_GRILLE = 45;
+    public static final int UNITE_VERTICALE_GRILLE = 50;
     
     @Override
     public int uniteHorizontaleGrille() {
-        // TODO Auto-generated method stub
         return UNITE_HORIZONTALE_GRILLE;
     }
     
     @Override
     public int uniteVerticaleGrille() {
-        // TODO Auto-generated method stub
         return UNITE_VERTICALE_GRILLE;
     }
     
