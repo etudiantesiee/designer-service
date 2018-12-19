@@ -21,7 +21,10 @@ public class DessinGroupe2 extends CreateurDeForme {
 	 */
 	@Override
 	public void dessiner() {
+		//Decalage pour le groupe 2
 		int decalage = 20* EcranEvaluation.UNITE_HORIZONTALE_GRILLE;
+		
+		//Points cheveux
 		Point p1 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 3 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 1);
 		Point p2 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 11 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 1);
 		Point p3 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 13 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 2);
@@ -51,6 +54,8 @@ public class DessinGroupe2 extends CreateurDeForme {
 		Point p27= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 0 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8);
 		Point p28= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 0 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 3);
 		Point p29= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 1 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 2);
+		
+		//Dessin cheveux
 		demarrerNouveauDessinAvecDesPoints()
 		.ajouter(p1)
 		.ajouter(p2)
@@ -81,6 +86,47 @@ public class DessinGroupe2 extends CreateurDeForme {
 		.ajouter(p27)
 		.ajouter(p28)
 		.ajouter(p29);
+		
+		//Points yeux
+		Point p30 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 3 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		Point p31 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 4 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+		Point p32 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 5 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+		Point p33 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		Point p34 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 9 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+		Point p35 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 10 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+		Point p36 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 11+ decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		Point p37 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 10 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8);
+		Point p38 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 9 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8);
+		Point p39 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		Point p40= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 5 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8);
+		Point p41= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 4 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8);
+		
+		//Dessin yeux
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p30)
+		.ajouter(p31)
+		.ajouter(p32)
+		.ajouter(p33)
+		.ajouter(p34)
+		.ajouter(p35)
+		.ajouter(p36)
+		.ajouter(p37)
+		.ajouter(p38)
+		.ajouter(p39)
+		.ajouter(p40)
+		.ajouter(p41);
+		
+		//Points nez
+		Point p42 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 6.7 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8.3);
+		Point p43 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8);
+		Point p44 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7.3 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8.3);
+		
+		//Dessin nez
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p42)
+		.ajouter(p43)
+		.ajouter(p44)
+		.nePasRelierLesPointsExtreme();
 		
 	}
 
