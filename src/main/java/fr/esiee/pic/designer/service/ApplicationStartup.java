@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe1;
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe2;
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe5;
+import fr.esiee.pic.designer.design.evaluation.DessinGroupe3;
 import fr.esiee.pic.designer.design.exemple.MaisonAvecCercleEtEllipse;
 import fr.esiee.pic.designer.design.exemple.PersonnageManga;
 import fr.esiee.pic.designer.domain.shapes.ElementGraphique;
@@ -65,6 +66,9 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
         DessinGroupe1 grp1 = new DessinGroupe1("grp1");
         add(grp1);
         
+        DessinGroupe3 grp3 = new DessinGroupe3("grp3");
+        add(grp3);
+
         DessinGroupe5 grp5 = new DessinGroupe5("grp5");
         add(grp5);
         
