@@ -128,6 +128,25 @@ public class DessinGroupe2 extends CreateurDeForme {
 		.ajouter(p44)
 		.nePasRelierLesPointsExtreme();
 		
+		//Points bouche
+		Point p45 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 6 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+		Point p46 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 8 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+		
+		//Dessin bouche
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p45)
+		.ajouter(p46);
+		
+		//Points fossette
+		Point p47 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 6.9 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+		Point p48 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7.1 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+				
+		//Dessin fossette
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p47)
+		.ajouter(p48);
+
+		
 	}
 
 }
