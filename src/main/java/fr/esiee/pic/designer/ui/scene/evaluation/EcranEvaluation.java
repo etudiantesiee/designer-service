@@ -1,6 +1,7 @@
 package fr.esiee.pic.designer.ui.scene.evaluation;
 
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe0;
+import fr.esiee.pic.designer.design.evaluation.DessinGroupe5;
 import fr.esiee.pic.designer.ui.scene.common.Ecran;
 
 public class EcranEvaluation extends Ecran {
@@ -37,6 +38,9 @@ public class EcranEvaluation extends Ecran {
         // Affichage de la démo : personnage manga
         DessinGroupe0 demoManga = new DessinGroupe0("Dessin groupe 0");
         e.addDessin(demoManga);
+        
+        DessinGroupe5 dessinManga5 = new DessinGroupe5("Dessin groupe 5");
+        e.addDessin(dessinManga5);
         
         e.afficher();
     }
