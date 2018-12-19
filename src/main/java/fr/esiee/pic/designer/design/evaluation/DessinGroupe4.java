@@ -197,7 +197,18 @@ public class DessinGroupe4 extends CreateurDeForme {
 		.ajouter(p65)
 		.ajouter(p66);
 		
+		
+		//nez
+		Point p67 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 6.8, EcranEvaluation.UNITE_VERTICALE_GRILLE * 24.4);
+		Point p68 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7, EcranEvaluation.UNITE_VERTICALE_GRILLE * 24.2);
+		Point p69 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7.2, EcranEvaluation.UNITE_VERTICALE_GRILLE * 24.4);
 
+		
+		demarrerNouveauDessinAvecDesPoints("nez")
+		.ajouter(p67)
+		.ajouter(p68)
+		.ajouter(p69)
+		.nePasRelierLesPointsExtreme();
 
 
 		
