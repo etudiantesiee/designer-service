@@ -1,6 +1,7 @@
 package fr.esiee.pic.designer.design.evaluation;
 
 import fr.esiee.pic.designer.domain.shapes.Couleur;
+import fr.esiee.pic.designer.domain.shapes.Ellipse;
 import fr.esiee.pic.designer.domain.shapes.Point;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
 import fr.esiee.pic.designer.ui.scene.evaluation.EcranEvaluation;
@@ -115,7 +116,7 @@ public class DessinGroupe1 extends CreateurDeForme {
 		Point p44 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 3, EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
 		Point p45= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 3, EcranEvaluation.UNITE_VERTICALE_GRILLE * 10);
 		Point p46= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 0, EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
-	;
+
 		demarrerNouveauDessinAvecDesPoints()
 		.ajouter(p28)
 		.ajouter(p29)
@@ -138,7 +139,74 @@ public class DessinGroupe1 extends CreateurDeForme {
 		.ajouter(p46)
 		.couleurDeFond(Couleur.GRIS);
 		
+		//pied gauche 
+		Point p47 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 1, EcranEvaluation.UNITE_VERTICALE_GRILLE * 14);
+		Point p48= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 3, EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+		Point p49= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 5, EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+		Point p50 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 5, EcranEvaluation.UNITE_VERTICALE_GRILLE * 14);
+
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p47)
+		.ajouter(p48)
+		.ajouter(p49)
+		.ajouter(p50);
 		
+		//pied droit 
+				Point p51 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 9, EcranEvaluation.UNITE_VERTICALE_GRILLE * 14);
+				Point p52= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 9, EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+				Point p53= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 11, EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+				Point p54 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 13, EcranEvaluation.UNITE_VERTICALE_GRILLE * 14);
+
+				demarrerNouveauDessinAvecDesPoints()
+				.ajouter(p51)
+				.ajouter(p52)
+				.ajouter(p53)
+				.ajouter(p54);
+				
+	 //trait visage
+				Point p55 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 4, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+				Point p56= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 5, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+				Point p57= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7, EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+				Point p58 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 9, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+				Point p59 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 10, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+
+				demarrerNouveauDessinAvecDesPoints()
+				.ajouter(p55)
+				.ajouter(p56)
+				.ajouter(p57)
+				.ajouter(p58)
+				.ajouter(p59)
+				.nePasRelierLesPointsExtreme();
+				
+				//nez 
+				Point p60 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 6.9, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7.1);
+				Point p61= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+				Point p62= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7.1, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7.1);
+				
+				demarrerNouveauDessinAvecDesPoints()
+				.ajouter(p60)
+				.ajouter(p61)
+				.ajouter(p62)
+				.nePasRelierLesPointsExtreme();
+				
+				//bouche
+				Point p63 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 6, EcranEvaluation.UNITE_VERTICALE_GRILLE * 9);
+				Point p64= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 8, EcranEvaluation.UNITE_VERTICALE_GRILLE * 9);
+			
+				
+				demarrerNouveauDessinAvecDesPoints()
+				.ajouter(p63)
+				.ajouter(p64);
+				
+				
+				//yeux
+				Point pe1 =new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 6, EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+				Point pe2=new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 8, EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+				Ellipse e1 = new Ellipse(pe1,EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 0.1, EcranEvaluation.UNITE_VERTICALE_GRILLE * 0.2);
+				Ellipse e2 = new Ellipse(pe2,EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 0.1, EcranEvaluation.UNITE_VERTICALE_GRILLE * 0.2);
+				
+				ajouterEllipse(e1);
+				ajouterEllipse(e2);
 	}
 
 }

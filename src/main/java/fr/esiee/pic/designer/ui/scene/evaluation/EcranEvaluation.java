@@ -1,6 +1,6 @@
 package fr.esiee.pic.designer.ui.scene.evaluation;
 
-import fr.esiee.pic.designer.design.evaluation.DessinGroupe0;
+
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe1;
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe2;
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe3;

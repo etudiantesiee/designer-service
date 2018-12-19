@@ -90,6 +90,27 @@ public class DessinGroupe3 extends CreateurDeForme {
 		.ajouter(p23)
 		.ajouter(p24);
 		
+		//lunette
+		Point p25 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (3 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		Point p26 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (5 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 10);
+		Point p27 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (9 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 10);
+		Point p28 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (11 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+
+		//dessin
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p25)
+		.ajouter(p26)
+		.ajouter(p27)
+		.ajouter(p28);
+		
+		//bouche
+		Point p29 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (5 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 12);
+		Point p30 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (9 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 12);
+		
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p29)
+		.ajouter(p30);
+		
 	}
 
 }
