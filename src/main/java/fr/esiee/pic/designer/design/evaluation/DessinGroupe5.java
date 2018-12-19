@@ -63,6 +63,20 @@ public class DessinGroupe5 extends CreateurDeForme {
 		Point p22 = new Point((dh+7.25)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+7.75)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
 		
 		
+//Menton
+		Point p23 = new Point((dh+2)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+9)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p24 = new Point((dh+4)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+12)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p25 = new Point((dh+6)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+14)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p26 = new Point((dh+8)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+14)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p27 = new Point((dh+10)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+12)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p28 = new Point((dh+12)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+9)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		
+		//Bouche
+		Point p29 = new Point((dh+6)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+10)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p30 = new Point((dh+8)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+10)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p31 = new Point((dh+9)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+9)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		
+		
 		demarrerNouveauDessinAvecDesPoints("Cheveux du bonhomme")
 		.ajouter(p1)
 		.ajouter(p2)
@@ -75,7 +89,8 @@ public class DessinGroupe5 extends CreateurDeForme {
 		.ajouter(p9)
 		.ajouter(p10)
 		.ajouter(p11)
-		.ajouter(p12);
+		.ajouter(p12)
+		.couleurDeFond(Couleur.GRIS);
 		
 		demarrerNouveauDessinAvecDesPoints("Lunettes de ski haut")
 		.ajouter(p13)
@@ -99,6 +114,20 @@ public class DessinGroupe5 extends CreateurDeForme {
 		.ajouter(p21)
 		.ajouter(p22)
 		.nePasRelierLesPointsExtreme();
+		
+		demarrerNouveauDessinAvecDesPoints("Menton")
+		.ajouter(p23)
+		.ajouter(p24)
+		.ajouter(p25)
+		.ajouter(p26)
+		.ajouter(p27)
+		.ajouter(p28)
+		.nePasRelierLesPointsExtreme();
+		
+		demarrerNouveauDessinAvecDesPoints("Bouche")
+		.ajouter(p29)
+		.ajouter(p30)
+		.ajouter(p31);
 	}
 
 }
