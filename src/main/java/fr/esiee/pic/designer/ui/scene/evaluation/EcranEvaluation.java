@@ -11,12 +11,12 @@ public class EcranEvaluation extends Ecran {
     /**
      * Unite sur l'axe des abscissed
      */
-    public static final int UNITE_HORIZONTALE_GRILLE = 10;
+    public static final int UNITE_HORIZONTALE_GRILLE = 20;
 
     /**
      * Unité sur l'axe des ordonnées
      */
-    public static final int UNITE_VERTICALE_GRILLE = 10;
+    public static final int UNITE_VERTICALE_GRILLE = 20;
     
     @Override
     public int uniteHorizontaleGrille() {
