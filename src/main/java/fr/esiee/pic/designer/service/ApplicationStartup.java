@@ -64,6 +64,9 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
         DessinGroupe1 grp1 = new DessinGroupe1("grp1");
         add(grp1);
         
+        DessinGroupe1 grp6 = new DessinGroupe1("grp6");
+        add(grp6);
+        
         LOGGER.info("Les composants graphiques de l'application ont été crées");
     }
     
