@@ -41,6 +41,7 @@ public class EcranEvaluation extends Ecran {
         // Affichage de la démo : personnage manga
         DessinGroupe1 dessinManga1 = new DessinGroupe1("Dessin groupe 1");
         e.addDessin(dessinManga1);
+        
         DessinGroupe2 dessinManga2 = new DessinGroupe2("Dessin groupe 2");
         e.addDessin(dessinManga2);
         
