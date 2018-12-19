@@ -1,5 +1,7 @@
 package fr.esiee.pic.designer.design.evaluation;
 
+import fr.esiee.pic.designer.domain.shapes.Couleur;
+import fr.esiee.pic.designer.domain.shapes.Ellipse;
 import fr.esiee.pic.designer.domain.shapes.Point;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
 import fr.esiee.pic.designer.ui.scene.evaluation.EcranEvaluation;
@@ -110,6 +112,30 @@ public class DessinGroupe3 extends CreateurDeForme {
 		demarrerNouveauDessinAvecDesPoints()
 		.ajouter(p29)
 		.ajouter(p30);
+		
+		//yeux
+		Point p31 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (5.5 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 8.5);
+		Ellipse e1 = new Ellipse( p31 , 5, 10, Couleur.NOIR);
+		Point p32 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (8.5 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 8.5);
+		Ellipse e2 = new Ellipse( p32 , 5, 10, Couleur.NOIR);
+		
+		ajouterEllipse(e1);
+		ajouterEllipse(e2);
+		
+		//couette1
+		Point p33 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (2 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 4);
+		Point p34 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (1 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+		Point p35 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (0 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+		Point p36 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (4 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+
+		//dessin
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p33)
+		.ajouter(p34)
+		.ajouter(p35)
+		.ajouter(p36)
+		.nePasRelierLesPointsExtreme();
+		
 		
 	}
 
