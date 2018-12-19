@@ -1,5 +1,7 @@
 package fr.esiee.pic.designer.design.evaluation;
 
+import fr.esiee.pic.designer.domain.shapes.Couleur;
+import fr.esiee.pic.designer.domain.shapes.Ellipse;
 import fr.esiee.pic.designer.domain.shapes.Point;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
 import fr.esiee.pic.designer.ui.scene.evaluation.EcranEvaluation;
@@ -85,7 +87,8 @@ public class DessinGroupe2 extends CreateurDeForme {
 		.ajouter(p26)
 		.ajouter(p27)
 		.ajouter(p28)
-		.ajouter(p29);
+		.ajouter(p29)
+		.couleurDeFond(Couleur.GRIS);
 		
 		//Points yeux
 		Point p30 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 3 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
@@ -114,7 +117,8 @@ public class DessinGroupe2 extends CreateurDeForme {
 		.ajouter(p38)
 		.ajouter(p39)
 		.ajouter(p40)
-		.ajouter(p41);
+		.ajouter(p41)
+		.couleurDeFond(Couleur.GRIS);
 		
 		//Points nez
 		Point p42 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 6.7 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8.3);
@@ -127,6 +131,49 @@ public class DessinGroupe2 extends CreateurDeForme {
 		.ajouter(p43)
 		.ajouter(p44)
 		.nePasRelierLesPointsExtreme();
+		
+		//Points bouche
+		Point p45 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 6 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+		Point p46 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 8 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+		
+		//Dessin bouche
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p45)
+		.ajouter(p46);
+		
+		//Points fossette
+		Point p47 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 6.9 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+		Point p48 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7.1 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+				
+		//Dessin fossette
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p47)
+		.ajouter(p48);
+		
+		//Points menton
+		Point p49 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 6 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 14);
+		Point p50 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 8 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 14);
+		
+		//Dessin menton
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p10)
+		.ajouter(p50)
+		.ajouter(p49)
+		.ajouter(p22)
+		.nePasRelierLesPointsExtreme();
+		
+		//Pupille gauche
+		Point p51 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 5 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		
+		Ellipse e1 = new Ellipse("gauche", p51, 10, 10, Couleur.NOIR);
+		ajouterEllipse(e1);
+		
+		//Pupille droite
+		Point p52 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 9 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		Ellipse e2 = new Ellipse("droite", p52, 10, 10, Couleur.NOIR);
+		ajouterEllipse(e2);
+		
+
 		
 	}
 
