@@ -74,6 +74,34 @@ public class DessinGroupe3 extends CreateurDeForme {
 		.ajouter(p17)
 		.ajouter(p18);
 		
+		//visage
+		Point p19 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (2 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+		Point p20 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (2 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+		Point p21 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (5 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 14);
+		Point p22 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (9 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 14);
+		Point p23 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (12 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+		Point p24 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (12 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+		
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p19)
+		.ajouter(p20)
+		.ajouter(p21)
+		.ajouter(p22)
+		.ajouter(p23)
+		.ajouter(p24);
+		
+		//lunette
+		Point p25 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (3 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		Point p26 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (5 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 10);
+		Point p27 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (9 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 10);
+		Point p28 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (11 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+
+		//dessin
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p25)
+		.ajouter(p26)
+		.ajouter(p27)
+		.ajouter(p28);
 		
 	}
 
