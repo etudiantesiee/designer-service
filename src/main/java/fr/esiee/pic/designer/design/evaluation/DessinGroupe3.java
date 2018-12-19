@@ -38,7 +38,8 @@ public class DessinGroupe3 extends CreateurDeForme {
 		.ajouter(p2)
 		.ajouter(p3)
 		.ajouter(p4)
-		.ajouter(p5);
+		.ajouter(p5)
+		.couleurDeFond(Couleur.GRIS);
 		
 		//point corne2
 		Point p6 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (12 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 0);
@@ -53,7 +54,8 @@ public class DessinGroupe3 extends CreateurDeForme {
 		.ajouter(p7)
 		.ajouter(p8)
 		.ajouter(p9)
-		.ajouter(p10);
+		.ajouter(p10)
+		.couleurDeFond(Couleur.GRIS);
 		
 		//frange
 		Point p11 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (2 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
@@ -74,7 +76,8 @@ public class DessinGroupe3 extends CreateurDeForme {
 		.ajouter(p15)
 		.ajouter(p16)
 		.ajouter(p17)
-		.ajouter(p18);
+		.ajouter(p18)
+		.couleurDeFond(Couleur.GRIS);
 		
 		//visage
 		Point p19 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (2 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
