@@ -103,6 +103,14 @@ public class DessinGroupe3 extends CreateurDeForme {
 		.ajouter(p27)
 		.ajouter(p28);
 		
+		//bouche
+		Point p29 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (5 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 12);
+		Point p30 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (9 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 12);
+		
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p29)
+		.ajouter(p30);
+		
 	}
 
 }
