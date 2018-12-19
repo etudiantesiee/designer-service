@@ -82,6 +82,34 @@ public class DessinGroupe2 extends CreateurDeForme {
 		.ajouter(p28)
 		.ajouter(p29);
 		
+		
+		Point p30 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 3 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		Point p31 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 4 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+		Point p32 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 5 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+		Point p33 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		Point p34 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 9 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+		Point p35 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 10 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
+		Point p36 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 11+ decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		Point p37 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 10 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8);
+		Point p38 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 9 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8);
+		Point p39 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 7 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 7);
+		Point p40= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 5 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8);
+		Point p41= new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * 4 + decalage, EcranEvaluation.UNITE_VERTICALE_GRILLE * 8);
+		
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p30)
+		.ajouter(p31)
+		.ajouter(p32)
+		.ajouter(p33)
+		.ajouter(p34)
+		.ajouter(p35)
+		.ajouter(p36)
+		.ajouter(p37)
+		.ajouter(p38)
+		.ajouter(p39)
+		.ajouter(p40)
+		.ajouter(p41);
+		
 	}
 
 }
