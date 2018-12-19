@@ -38,7 +38,8 @@ public class DessinGroupe3 extends CreateurDeForme {
 		.ajouter(p2)
 		.ajouter(p3)
 		.ajouter(p4)
-		.ajouter(p5);
+		.ajouter(p5)
+		.couleurDeFond(Couleur.GRIS);
 		
 		//point corne2
 		Point p6 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (12 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 0);
@@ -53,7 +54,8 @@ public class DessinGroupe3 extends CreateurDeForme {
 		.ajouter(p7)
 		.ajouter(p8)
 		.ajouter(p9)
-		.ajouter(p10);
+		.ajouter(p10)
+		.couleurDeFond(Couleur.GRIS);
 		
 		//frange
 		Point p11 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (2 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
@@ -74,7 +76,8 @@ public class DessinGroupe3 extends CreateurDeForme {
 		.ajouter(p15)
 		.ajouter(p16)
 		.ajouter(p17)
-		.ajouter(p18);
+		.ajouter(p18)
+		.couleurDeFond(Couleur.GRIS);
 		
 		//visage
 		Point p19 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (2 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 6);
@@ -135,6 +138,33 @@ public class DessinGroupe3 extends CreateurDeForme {
 		.ajouter(p35)
 		.ajouter(p36)
 		.nePasRelierLesPointsExtreme();
+		
+		//couette2
+		Point p37 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (12 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 4);
+		Point p38 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (13 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+		Point p39 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (14 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+		Point p40 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (10 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+
+		//dessin
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p37)
+		.ajouter(p38)
+		.ajouter(p39)
+		.ajouter(p40)
+		.nePasRelierLesPointsExtreme();
+		
+		//nez
+		Point p41 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (6.75 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+		Point p42 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (7 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 10.75);
+		Point p43 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (7.25 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+
+		//dessin
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p41)
+		.ajouter(p42)
+		.ajouter(p43)
+		.nePasRelierLesPointsExtreme();
+		
 		
 		
 	}
