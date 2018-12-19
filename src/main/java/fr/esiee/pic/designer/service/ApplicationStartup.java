@@ -8,7 +8,6 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
-import fr.esiee.pic.designer.design.evaluation.DessinGroupe0;
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe1;
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe2;
 import fr.esiee.pic.designer.design.exemple.MaisonAvecCercleEtEllipse;
