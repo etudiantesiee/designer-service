@@ -38,6 +38,8 @@ public class EcranEvaluation extends Ecran {
         Ecran e = new EcranEvaluation();
         
         // Affichage de la démo : personnage manga
+        //DessinGroupe0 demoManga = new DessinGroupe0("Dessin groupe 0");
+        //e.addDessin(demoManga);
 
         DessinGroupe2 dessinManga2 = new DessinGroupe2("Dessin groupe 2");
         e.addDessin(dessinManga2);
@@ -47,6 +49,7 @@ public class EcranEvaluation extends Ecran {
         
         DessinGroupe6 demoManga6 = new DessinGroupe6("Dessin groupe 6");
         e.addDessin(demoManga6);
+        
         e.afficher();
     }
 }
