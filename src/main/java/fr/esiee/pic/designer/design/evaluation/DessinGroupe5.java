@@ -1,5 +1,7 @@
 package fr.esiee.pic.designer.design.evaluation;
 
+import fr.esiee.pic.designer.domain.shapes.Couleur;
+import fr.esiee.pic.designer.domain.shapes.Ellipse;
 import fr.esiee.pic.designer.domain.shapes.Point;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
 import fr.esiee.pic.designer.ui.scene.evaluation.EcranEvaluation;
@@ -39,7 +41,29 @@ public class DessinGroupe5 extends CreateurDeForme {
 		Point p11 = new Point((dh+13)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+4)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
 		Point p12 = new Point((dh+11)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+2)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
 		
-		demarrerNouveauDessinAvecDesPoints()
+		//Lunettes
+		Point p13 = new Point((dh+4)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+5)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p14 = new Point((dh+10)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+5)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p15 = new Point((dh+3.75)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+8)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p16 = new Point((dh+6)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+8)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p17 = new Point((dh+7)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+7)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p18 = new Point((dh+8)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+8)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p19 = new Point((dh+10.25)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+8)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		
+		//Yeux
+		Point centre_oeild_gauche = new Point((dh+6)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+7)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Ellipse y1 = new Ellipse("oeilg", centre_oeild_gauche, 5, 5, Couleur.NOIR);
+		
+		Point centre_oeild_droit = new Point((dh+8)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+7)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Ellipse y2 = new Ellipse("oeild", centre_oeild_droit, 5, 5, Couleur.NOIR);
+		
+		//Nez
+		Point p20 = new Point((dh+6.75)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+7.75)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p21 = new Point((dh+7)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+8)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		Point p22 = new Point((dh+7.25)*EcranEvaluation.UNITE_HORIZONTALE_GRILLE, (dv+7.75)*EcranEvaluation.UNITE_VERTICALE_GRILLE);
+		
+		
+		demarrerNouveauDessinAvecDesPoints("Cheveux du bonhomme")
 		.ajouter(p1)
 		.ajouter(p2)
 		.ajouter(p3)
@@ -52,6 +76,29 @@ public class DessinGroupe5 extends CreateurDeForme {
 		.ajouter(p10)
 		.ajouter(p11)
 		.ajouter(p12);
+		
+		demarrerNouveauDessinAvecDesPoints("Lunettes de ski haut")
+		.ajouter(p13)
+		.ajouter(p14)
+		.nePasRelierLesPointsExtreme();
+		
+		demarrerNouveauDessinAvecDesPoints("Lunettes de ski bas")
+		.ajouter(p15)
+		.ajouter(p16)
+		.ajouter(p17)
+		.ajouter(p18)
+		.ajouter(p19)
+		.nePasRelierLesPointsExtreme();
+		
+		//ajout des yeux
+		ajouterEllipse(y1);
+		ajouterEllipse(y2);
+		
+		demarrerNouveauDessinAvecDesPoints("Nez")
+		.ajouter(p20)
+		.ajouter(p21)
+		.ajouter(p22)
+		.nePasRelierLesPointsExtreme();
 	}
 
 }
