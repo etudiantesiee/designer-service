@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe0;
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe1;
+import fr.esiee.pic.designer.design.evaluation.DessinGroupe2;
 import fr.esiee.pic.designer.design.exemple.MaisonAvecCercleEtEllipse;
 import fr.esiee.pic.designer.design.exemple.PersonnageManga;
 import fr.esiee.pic.designer.domain.shapes.ElementGraphique;
@@ -58,8 +59,8 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
         MaisonAvecCercleEtEllipse maisonAvecCercleEtEllipse = new MaisonAvecCercleEtEllipse("maisonAvecCercleEtEllipse");
         add(maisonAvecCercleEtEllipse);
         
-        DessinGroupe0 grp0 = new DessinGroupe0("grp0");
-        add(grp0);
+        DessinGroupe2 grp2 = new DessinGroupe2("grp2");
+        add(grp2);
         
         DessinGroupe1 grp1 = new DessinGroupe1("grp1");
         add(grp1);

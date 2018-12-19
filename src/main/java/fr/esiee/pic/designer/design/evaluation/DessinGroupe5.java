@@ -4,14 +4,14 @@ import fr.esiee.pic.designer.domain.shapes.Point;
 import fr.esiee.pic.designer.domain.tools.CreateurDeForme;
 import fr.esiee.pic.designer.ui.scene.evaluation.EcranEvaluation;
 
-public class DessinGroupe0 extends CreateurDeForme {
+public class DessinGroupe5 extends CreateurDeForme {
 	
 	/**
 	 * Constructeur avec nom
 	 * 
 	 * @param nom
 	 */
-	public DessinGroupe0(String nom) {
+	public DessinGroupe5(String nom) {
 		super(nom);
 	}
 	
@@ -21,7 +21,6 @@ public class DessinGroupe0 extends CreateurDeForme {
 	 */
 	@Override
 	public void dessiner() {
-		
 		
 	}
 
