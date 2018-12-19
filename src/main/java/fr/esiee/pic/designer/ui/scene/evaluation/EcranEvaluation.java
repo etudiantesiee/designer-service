@@ -9,12 +9,12 @@ public class EcranEvaluation extends Ecran {
     /**
      * Unite sur l'axe des abscissed
      */
-    public static final int UNITE_HORIZONTALE_GRILLE = 50;
+    public static final int UNITE_HORIZONTALE_GRILLE = 10;
 
     /**
      * Unité sur l'axe des ordonnées
      */
-    public static final int UNITE_VERTICALE_GRILLE = 50;
+    public static final int UNITE_VERTICALE_GRILLE = 10;
     
     @Override
     public int uniteHorizontaleGrille() {
@@ -36,8 +36,8 @@ public class EcranEvaluation extends Ecran {
         Ecran e = new EcranEvaluation();
         
         // Affichage de la démo : personnage manga
-        DessinGroupe0 demoManga = new DessinGroupe0("Dessin groupe 0");
-        e.addDessin(demoManga);
+        //DessinGroupe0 demoManga = new DessinGroupe0("Dessin groupe 0");
+        //e.addDessin(demoManga);
         
         DessinGroupe5 dessinManga5 = new DessinGroupe5("Dessin groupe 5");
         e.addDessin(dessinManga5);
