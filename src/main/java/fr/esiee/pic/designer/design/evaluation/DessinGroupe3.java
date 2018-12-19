@@ -136,6 +136,33 @@ public class DessinGroupe3 extends CreateurDeForme {
 		.ajouter(p36)
 		.nePasRelierLesPointsExtreme();
 		
+		//couette2
+		Point p37 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (12 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 4);
+		Point p38 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (13 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+		Point p39 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (14 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+		Point p40 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (10 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 13);
+
+		//dessin
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p37)
+		.ajouter(p38)
+		.ajouter(p39)
+		.ajouter(p40)
+		.nePasRelierLesPointsExtreme();
+		
+		//nez
+		Point p41 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (6.75 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+		Point p42 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (7 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 10.75);
+		Point p43 = new Point(EcranEvaluation.UNITE_HORIZONTALE_GRILLE * (7.25 + i), EcranEvaluation.UNITE_VERTICALE_GRILLE * 11);
+
+		//dessin
+		demarrerNouveauDessinAvecDesPoints()
+		.ajouter(p41)
+		.ajouter(p42)
+		.ajouter(p43)
+		.nePasRelierLesPointsExtreme();
+		
+		
 		
 	}
 
