@@ -3,6 +3,7 @@ package fr.esiee.pic.designer.ui.scene.evaluation;
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe0;
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe2;
 import fr.esiee.pic.designer.design.evaluation.DessinGroupe5;
+import fr.esiee.pic.designer.design.evaluation.DessinGroupe6;
 import fr.esiee.pic.designer.ui.scene.common.Ecran;
 
 public class EcranEvaluation extends Ecran {
@@ -45,6 +46,9 @@ public class EcranEvaluation extends Ecran {
         
         DessinGroupe5 dessinManga5 = new DessinGroupe5("Dessin groupe 5");
         e.addDessin(dessinManga5);
+        
+        DessinGroupe6 demoManga6 = new DessinGroupe6("Dessin groupe 6");
+        e.addDessin(demoManga6);
         
         e.afficher();
     }
